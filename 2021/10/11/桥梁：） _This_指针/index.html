@@ -20,30 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="网安征程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Poem_n的博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 123456789101112131415161718class A&amp;#123;  public:  A(int aa):i(aa);   v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++&quot;This&quot;指针">
+<meta property="og:url" content="http://example.com/2021/10/11/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="Poem_n的博客">
-<meta property="og:description" content="网安征程">
+<meta property="og:description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 123456789101112131415161718class A&amp;#123;  public:  A(int aa):i(aa);   v">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-11T07:42:02.855Z">
+<meta property="article:modified_time" content="2021-10-11T07:42:58.713Z">
 <meta property="article:author" content="Poem_n">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/10/11/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Poem_n的博客</title>
+  <title>C++"This"指针 | Poem_n的博客</title>
   
 
 
@@ -141,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -159,10 +162,9 @@
       <meta itemprop="name" content="Poem_n的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/11/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/" class="post-title-link" itemprop="url">C++"This"指针</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          C++"This"指针
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -186,7 +188,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。</p>
+        <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。</p>
 <h3 id="它有什么用？"><a href="#它有什么用？" class="headerlink" title="它有什么用？"></a>它有什么用？</h3><p>&ensp;&ensp;&ensp;&ensp;先放代码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>(<span class="keyword">int</span> aa):<span class="built_in">i</span>(aa);</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">   cout&lt;&lt;<span class="string">&quot;i的值为：&quot;</span>&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">A <span class="title">a</span><span class="params">(<span class="number">20</span>)</span>,<span class="title">b</span><span class="params">(<span class="number">30</span>)</span></span>;</span><br><span class="line">a.out;       <span class="comment">//  输出 20       </span></span><br><span class="line">b.out;       <span class="comment">//  输出 30 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -210,163 +212,30 @@
 <p>在很久很久之前，C++还在“胎中”时，设计员就想法设法的构造C++。又要加面向对象功能，又要保持原有的内存管理的能力，又要有布拉布拉的功能。</p>
 <p>设计员就想啊。。。。干脆就给C++加个面向对象的能力。在给C++来个翻译成C的功能（C++到C的翻译器）。不就O了~。偷懒总会有BUG，为了解决 成员变量于全局变量的区别，所以才引入了”This”指针。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Poem_n">
-      <meta itemprop="description" content="网安征程">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poem_n的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" class="post-title-link" itemprop="url">phpMyAdmin的日志写入shell</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
-<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
-<ul>
-<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
-</li>
-<li><p>general log file 指的是日志的保存路径。</p>
-</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
-<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
-<p>将路径设置为网站目录，并命名为shell.php</p>
-<p>我们查询：</p>
-<p>SELECT ‘一句话木马’ ;</p>
-<p>POST中不用引号也可以</p>
-<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" rel="prev" title="phpMyAdmin的日志写入shell">
+      <i class="fa fa-chevron-left"></i> phpMyAdmin的日志写入shell
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Poem_n">
-      <meta itemprop="description" content="网安征程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poem_n的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-05 16:29:40" itemprop="dateCreated datePublished" datetime="2021-10-05T16:29:40+08:00">2021-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-06 11:06:33" itemprop="dateModified" datetime="2021-10-06T11:06:33+08:00">2021-10-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>###时间<br>2021-10-6的清晨。我的博客基本成型。（这或许成为有趣的“东西”）</p>
-<p>###博客介绍<br>预计分为两个模块；网安 ，编程。</p>
-<p>文章内容含有无确定性阶段性。但我想做成阶段性流畅的文章顺序，并以此记录我学习成长过程。</p>
-<p>正是由于主要功能为记录学习与成长。所以内容极具主观和偏见，有很强的个人想法和误导性。</p>
-<h3 id="”回响“"><a href="#”回响“" class="headerlink" title="”回响“"></a>”回响“</h3><p>等我20岁回想时，这个博客或许会给予我“回响”。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -419,6 +288,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E6%98%AF%E4%B8%AA%E5%95%A5%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">它是个啥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">它有什么用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%83%E5%A6%82%E4%BD%95%E7%94%A8%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">它如何用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A8%E6%A0%B9%E6%BA%AF%E6%BA%90"><span class="nav-number">4.</span> <span class="nav-text">刨根溯源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%83%E6%98%AF%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%92%8C%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%85%B3%E8%81%94%E7%9A%84%E6%A1%A5%E6%A2%81%E3%80%82"><span class="nav-number">4.1.</span> <span class="nav-text">它是成员函数和成员变量关联的桥梁。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ethis%E6%8C%87%E9%92%88%E7%9A%84%E4%B8%80%E4%B8%AA%E7%B2%BE%E5%85%B8%E5%9B%9E%E7%AD%94"><span class="nav-number">5.</span> <span class="nav-text">关于this指针的一个精典回答:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">6.</span> <span class="nav-text">end</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
