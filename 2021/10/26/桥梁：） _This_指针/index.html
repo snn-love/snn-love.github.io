@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 123456789101112131415161718class A&amp;#123; int i;  public:  A(int aa):i(a">
+  <meta name="description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 1234567891011121314">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++&quot;This&quot;指针">
 <meta property="og:url" content="http://example.com/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="Poem_n的博客">
-<meta property="og:description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 123456789101112131415161718class A&amp;#123; int i;  public:  A(int aa):i(a">
+<meta property="og:description" content="它是个啥？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。 它有什么用？&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;先放代码 1234567891011121314">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-26T13:17:34.843Z">
-<meta property="article:modified_time" content="2021-10-26T14:04:10.187Z">
+<meta property="article:modified_time" content="2021-11-29T06:07:11.270Z">
 <meta property="article:author" content="Poem_n">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-10-26 21:17:34 / 修改时间：22:04:10" itemprop="dateCreated datePublished" datetime="2021-10-26T21:17:34+08:00">2021-10-26</time>
+              <time title="创建时间：2021-10-26 21:17:34" itemprop="dateCreated datePublished" datetime="2021-10-26T21:17:34+08:00">2021-10-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-29 14:07:11" itemprop="dateModified" datetime="2021-11-29T14:07:11+08:00">2021-11-29</time>
+              </span>
 
           
 
@@ -188,7 +194,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;是个指针，指向自定义类型的对象（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。</p>
+        <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。</p>
 <h3 id="它有什么用？"><a href="#它有什么用？" class="headerlink" title="它有什么用？"></a>它有什么用？</h3><p>&ensp;&ensp;&ensp;&ensp;先放代码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>(<span class="keyword">int</span> aa):<span class="built_in">i</span>(aa);</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">   cout&lt;&lt;<span class="string">&quot;i的值为：&quot;</span>&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">A <span class="title">a</span><span class="params">(<span class="number">20</span>)</span>,<span class="title">b</span><span class="params">(<span class="number">30</span>)</span></span>;</span><br><span class="line">a.out;       <span class="comment">//  输出 20       </span></span><br><span class="line">b.out;       <span class="comment">//  输出 30 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
