@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="网安征程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poem_n的博客">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Poem_n的博客">
+<meta property="og:description" content="网安征程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Poem_n">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Poem_n的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Poem_n的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Insecure-Direct-Object-References/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Insecure-Direct-Object-References/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Insecure-Direct-Object-References-OTG-AUTHZ-004"><a href="#Insecure-Direct-Object-References-OTG-AUTHZ-004" class="headerlink" title="Insecure Direct Object References (OTG-AUTHZ-004)"></a>Insecure Direct Object References (OTG-AUTHZ-004)</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Insecure_Direct_Object_References_(OTG-AUTHZ-004)">https://wiki.owasp.org/index.php/Testing_for_Insecure_Direct_Object_References_(OTG-AUTHZ-004)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bugcrowd.com/how-to-find-idor-insecure-direct-object-reference-vulnerabilities-for-large-bounty-rewards/">https://www.bugcrowd.com/how-to-find-idor-insecure-direct-object-reference-vulnerabilities-for-large-bounty-rewards/</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet">https://wiki.owasp.org/index.php/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://codeburst.io/hunting-insecure-direct-object-reference-vulnerabilities-for-fun-and-profit-part-1-f338c6a52782">https://codeburst.io/hunting-insecure-direct-object-reference-vulnerabilities-for-fun-and-profit-part-1-f338c6a52782</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2">A Deep Dive On The Most Critical API Vulnerability — BOLA (Broken Object Level Authorization)</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@matti.bijnens/how-spending-our-saturday-hacking-earned-us-20k-60990c4678d4">How spending our Saturday hacking earned us 20k</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/smodnix/31-days-of-API-Security-Tips">31-days-of-API-Security-Tips</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/819807">[2020] - Missing ownership check on remote wipe endpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/544329">[2019] - Twitter: IDOR and statistics leakage in Orders</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.detectify.com/2019/07/03/lerhan-bypassing-idor-protection-with-url-shorteners/">[2019] - Lerhan: Bypassing IDOR protection with URL shorteners</a></li>
+<li><a target="_blank" rel="noopener" href="https://hethical.io/trello-bug-bounty-the-websocket-receives-data-when-a-public-company-creates-a-team-visible-board/">Trello bug bounty: The websocket receives data when a public company creates a team visible board</a></li>
+<li><a target="_blank" rel="noopener" href="https://hethical.io/trello-bug-bounty-payments-informations-are-sent-to-the-webhook-when-a-team-changes-its-visibility/">Trello bug bounty: Payments informations are sent to the webhook when a team changes its visibility</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/143717">Change any Uber user’s password through /rt/users/passwordless-signup - Account Takeover (critical)</a></li>
+<li><a target="_blank" rel="noopener" href="https://secgeek.net/youtube-vulnerability/">Vulnerability in Youtube allowed moving comments from any video to another</a></li>
+<li><a target="_blank" rel="noopener" href="https://secgeek.net/twitter-vulnerability/">Twitter Vulnerability Could Delete Credit Cards from Any Twitter Account</a></li>
+<li><a target="_blank" rel="noopener" href="https://secgeek.net/yahoo-comments-vulnerability/">One Vulnerability allowed deleting comments of any user in all Yahoo sites</a></li>
+<li><a target="_blank" rel="noopener" href="http://yasserali.com/microsoft-careers-com-remote-password-reset/">Microsoft-careers.com Remote Password Reset</a></li>
+<li><a target="_blank" rel="noopener" href="http://yasserali.com/how-i-could-change-your-ebay-password/">How I could change your eBay password</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.anandpraka.sh/2014/11/hacking-facebookcomthanks-posting-on.html">Hacking Facebook.com/thanks Posting on behalf of your friends!</a></li>
+<li><a target="_blank" rel="noopener" href="https://bitquark.co.uk/blog/2016/02/09/how_i_got_access_to_millions_of_redacted_accounts">How I got access to millions of [redacted] accounts</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/137502">All Vimeo Private videos disclosure via Authorization Bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/149907">Urgent: Attacker can Access Every Data Source on Bime</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/145467">Downloading password protected / restricted videos</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/151465">Get organization info base on uuid</a></li>
+<li><a target="_blank" rel="noopener" href="http://roy-castillo.blogspot.com/2013/07/how-i-exposed-your-primary-facebook.html">How I Exposed your Primary Facebook Email Address (Bug worth $4500)</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@rajsek/my-3rd-facebook-bounty-hat-trick-chennai-tcs-er-name-listed-in-facebook-hall-of-fame-47f57f2a4f71">DOB disclosed using “Facebook Graph API Reverse Engineering”</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/152696">Leak of all project names and all user names , even across applications</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/174721">View liked twits of private account via publish.twitter.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://danmelamed.blogspot.com/2017/01/facebook-vulnerability-delete-any-video.html">Facebook Vulnerability - Delete Any Video on Facebook</a></li>
+<li><a target="_blank" rel="noopener" href="https://stephensclafani.com/2014/07/08/hacking-facebooks-legacy-api-part-1-making-calls-on-behalf-of-any-user/">Hacking Facebook’s Legacy API, Part 1: Making Calls on Behalf of Any User</a></li>
+<li><a target="_blank" rel="noopener" href="https://stephensclafani.com/2014/07/29/hacking-facebooks-legacy-api-part-2-stealing-user-sessions/">Hacking Facebook’s Legacy API, Part 2: Stealing User Sessions</a></li>
+<li><a target="_blank" rel="noopener" href="https://pranavhivarekar.in/2016/06/23/facebooks-bug-delete-any-video-from-facebook/">Facebook’s Bug - Delete any video from Facebook</a></li>
+<li><a target="_blank" rel="noopener" href="https://buer.haus/2017/03/31/airbnb-web-to-app-phone-notification-idor-to-view-everyones-airbnb-messages/">Airbnb – Web to App Phone Notification IDOR to view Everyone’s Airbnb Messages</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.anandpraka.sh/2017/05/how-i-took-control-of-your-twitter.html">How I took control of your Twitter account (tweeting, viewing/deleting photos and other media)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/262661">IDOR on HackerOne Feedback Review - HackerOne</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/287789">IDOR to view User Order Information - HackerOne</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/how-i-was-able-to-generate-access-tokens-for-any-facebook-user-6b84392d0342">Generating Access Tokens for any Facebook user.</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Insecure-Authentication-Class/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Insecure-Authentication-Class/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Insecure-Authentication-Class"><a href="#Insecure-Authentication-Class" class="headerlink" title="Insecure Authentication Class"></a>Insecure Authentication Class</h1><p>This page includes following test cases:</p>
+<h2 id="Test-User-Registration-Process-OTG-IDENT-002"><a href="#Test-User-Registration-Process-OTG-IDENT-002" class="headerlink" title="Test User Registration Process (OTG-IDENT-002)"></a>Test User Registration Process (OTG-IDENT-002)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Test_User_Registration_Process_(OTG-IDENT-002)">https://wiki.owasp.org/index.php/Test_User_Registration_Process_(OTG-IDENT-002)</a></p>
+<h2 id="Testing-for-Weak-Lock-Out-Mechanism-OTG-AUTHN-003"><a href="#Testing-for-Weak-Lock-Out-Mechanism-OTG-AUTHN-003" class="headerlink" title="Testing for Weak Lock Out Mechanism (OTG-AUTHN-003)"></a>Testing for Weak Lock Out Mechanism (OTG-AUTHN-003)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Weak_lock_out_mechanism_(OTG-AUTHN-003)">https://wiki.owasp.org/index.php/Testing_for_Weak_lock_out_mechanism_(OTG-AUTHN-003)</a></p>
+<h2 id="Testing-for-Bypassing-Authentication-Schema-OTG-AUTHN-004"><a href="#Testing-for-Bypassing-Authentication-Schema-OTG-AUTHN-004" class="headerlink" title="Testing for Bypassing Authentication Schema (OTG-AUTHN-004)"></a>Testing for Bypassing Authentication Schema (OTG-AUTHN-004)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Bypassing_Authentication_Schema_(OTG-AUTHN-004)">https://wiki.owasp.org/index.php/Testing_for_Bypassing_Authentication_Schema_(OTG-AUTHN-004)</a></p>
+<h2 id="Test-Remember-Password-Functionality-OTG-AUTHN-005"><a href="#Test-Remember-Password-Functionality-OTG-AUTHN-005" class="headerlink" title="Test Remember Password Functionality (OTG-AUTHN-005)"></a>Test Remember Password Functionality (OTG-AUTHN-005)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Vulnerable_Remember_Password_(OTG-AUTHN-005)">https://wiki.owasp.org/index.php/Testing_for_Vulnerable_Remember_Password_(OTG-AUTHN-005)</a></p>
+<h2 id="Testing-for-Browser-Cache-Weakness-OTG-AUTHN-006"><a href="#Testing-for-Browser-Cache-Weakness-OTG-AUTHN-006" class="headerlink" title="Testing for Browser Cache Weakness (OTG-AUTHN-006)"></a>Testing for Browser Cache Weakness (OTG-AUTHN-006)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Browser_cache_weakness_(OTG-AUTHN-006)">https://wiki.owasp.org/index.php/Testing_for_Browser_cache_weakness_(OTG-AUTHN-006)</a></p>
+<h2 id="Testing-for-Weak-Security-Question-Answer-OTG-AUTHN-008"><a href="#Testing-for-Weak-Security-Question-Answer-OTG-AUTHN-008" class="headerlink" title="Testing for Weak Security Question/Answer (OTG-AUTHN-008)"></a>Testing for Weak Security Question/Answer (OTG-AUTHN-008)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Weak_security_question/answer_(OTG-AUTHN-008)">https://wiki.owasp.org/index.php/Testing_for_Weak_security_question/answer_(OTG-AUTHN-008)</a></p>
+<h2 id="Testing-for-Weak-Password-Change-or-Reset-Functionalities-OTG-AUTHN-009"><a href="#Testing-for-Weak-Password-Change-or-Reset-Functionalities-OTG-AUTHN-009" class="headerlink" title="Testing for Weak Password Change or Reset Functionalities (OTG-AUTHN-009)"></a>Testing for Weak Password Change or Reset Functionalities (OTG-AUTHN-009)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_weak_password_change_or_reset_functionalities_(OTG-AUTHN-009)">https://wiki.owasp.org/index.php/Testing_for_weak_password_change_or_reset_functionalities_(OTG-AUTHN-009)</a></p>
+<h2 id="Testing-for-Weaker-Authentication-in-Alternative-Channel-OTG-AUTHN-010"><a href="#Testing-for-Weaker-Authentication-in-Alternative-Channel-OTG-AUTHN-010" class="headerlink" title="Testing for Weaker Authentication in Alternative Channel (OTG-AUTHN-010)"></a>Testing for Weaker Authentication in Alternative Channel (OTG-AUTHN-010)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Weaker_authentication_in_alternative_channel_(OTG-AUTHN-010)">https://wiki.owasp.org/index.php/Testing_for_Weaker_authentication_in_alternative_channel_(OTG-AUTHN-010)</a></p>
+<h2 id="Testing-for-Weak-or-Unenforced-Username-Policy-OTG-IDENT-005"><a href="#Testing-for-Weak-or-Unenforced-Username-Policy-OTG-IDENT-005" class="headerlink" title="Testing for Weak or Unenforced Username Policy (OTG-IDENT-005)"></a>Testing for Weak or Unenforced Username Policy (OTG-IDENT-005)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Weak_or_unenforced_username_policy_(OTG-IDENT-005)">https://wiki.owasp.org/index.php/Testing_for_Weak_or_unenforced_username_policy_(OTG-IDENT-005)</a></p>
+<h2 id="Testing-for-Default-Credentials-OTG-AUTHN-002"><a href="#Testing-for-Default-Credentials-OTG-AUTHN-002" class="headerlink" title="Testing for Default Credentials (OTG-AUTHN-002)"></a>Testing for Default Credentials (OTG-AUTHN-002)</h2><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_default_credentials_(OTG-AUTHN-002)">https://wiki.owasp.org/index.php/Testing_for_default_credentials_(OTG-AUTHN-002)</a></p>
+<h2 id="Testing-for-Two-Factor-Authentication-Bypass-EXTRA-TEST-012"><a href="#Testing-for-Two-Factor-Authentication-Bypass-EXTRA-TEST-012" class="headerlink" title="Testing for Two Factor Authentication Bypass (EXTRA-TEST-012)"></a>Testing for Two Factor Authentication Bypass (EXTRA-TEST-012)</h2><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://shahmeeramir.com/4-methods-to-bypass-two-factor-authentication-2b0075d9eb5f">4 Methods to Bypass two factor Authentication</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.amolbaikar.com/facebook-oauth-framework-vulnerability/">[2020] - Facebook OAuth Framework Vulnerability</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/867513">[2020] - [shopify] Takeover an account that doesn’t have a Shopify ID and more</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/736522">[2020] - [authmagic-timerange-stateless-core] Improper Authentication in NodeJS</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/892904">[2020] - Ability to link a Google account to another staff account/store owner that isn’t linked yet</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/763058">[2020] - through %09 Character the attacker is able to steal Github Token</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/746186">[2020] - Leak of authorization urls leads to account takeover</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@rat010/otp-verification-bypass-ee17d68f8425">[2020] - OTP Verification Bypass (response edit)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/314808">[2020] - Full account takeover at Reverb.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/792895">[2020] - bypass old password with array in /admin/account-user-email.php</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/721341">[2020] - Information can be changed without a password</a></li>
+<li><a target="_blank" rel="noopener" href="https://weblog.seecureapp.com/full-account-takeover-via-reset-password-function/">[2019] - Full account takeover via reset password function</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.acunetix.com/blog/articles/password-reset-poisoning/">[2019] - Password Reset Vulnerability (Poisoning)</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@protector47/password-reset-vulnerability-full-account-takeover-insecure-direct-object-reference-c4a9a3ea8268">[2019] - Password Reset Vulnerability — Full Account takeover (Insecure Direct Object Reference)</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/how-i-was-able-to-bypass-otp-token-requirement-in-razer-the-story-of-a-critical-bug-fc63a94ad572">[2019] - How I was able to bypass OTP code requirement in Razer [The story of a critical bug]</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/685007">[2019] - Password Reset Link not expiring after changing the email Leads To Account Takeover</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/229619">[2019] - Ability to verify any email address you don’t own - accounts.shopify.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.teddykatz.com/2019/11/05/github-oauth-bypass.html">[2019] - Bypassing GitHub’s OAuth flow</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.paloaltonetworks.com/2019/10/cloud-kubernetes-vulnerabilities/">[2019] - Analysis of Two Newly Patched Kubernetes Vulnerabilities</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/how-i-was-able-to-bypass-otp-token-requirement-in-razer-the-story-of-a-critical-bug-fc63a94ad572">[2019] - How I was able to bypass OTP code requirement in Razer</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/565883">[2019] - $3,000 - Bypass Email Verification in GitLab – Able to Access Internal Gitlab Services that use Login with Gitlab and Perform Check on email domain</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@lukeberner/how-i-abused-2fa-to-maintain-persistence-after-a-password-change-google-microsoft-instagram-7e3f455b71a1">[2019] - How I abused 2FA to maintain persistence after a password change (Google, Microsoft, Instagram, Cloudflare, etc)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.shawarkhan.com/2019/01/hijacking-accounts-by-retrieving-jwt.html?m=1">[2019] - Hijacking Accounts By Retrieving Jwt Tokens Via Unvalidated Redirects</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/a-curious-case-from-little-to-complete-email-verification-bypass-2c7570040e7e">[2019] - A Curious Case From Little To Complete Email Verification Bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/638635">[2019] - Insecure Zendesk SSO implementation by generating JWT client-side</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/498052">[2019] - Password theft login.newrelic.com via Request Smuggling</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/322985">[2019] - Ability to reset password for account</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/411337">[2018] - Forget password link not expiring after email change.</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/japzdivino/bypass-hackerone-2fa-requirement-and-reporter-blacklist-46d7959f1ee5">[2018] - Bypass HackerOne 2FA requirement and reporter blacklist</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/342693">[2018] - Password reset token leakage via referer</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/315879">[2018] - Able to reset other user’s password in https://card.starbucks.com.sg/</a></li>
+<li><a target="_blank" rel="noopener" href="http://c0d3g33k.blogspot.com/2018/02/how-i-bypassed-2-factor-authentication.html">[2018] - How I bypassed 2-Factor Authentication in a bug bounty program</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/303322">[2018] - [www.coursera.org] Leaking password reset link on referrer header</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@vishnu0002/instagram-multi-factor-authentication-bypass-924d963325a1">[2018] - Instagram Multi-factor authentication Bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/257305">[2018] - [www.boozt.com] - Authentication bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/253934">[2017] - Password reset token issue</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/170161">[2018] - Password reset token not expiring</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/272379">[2017] - Password reset link injection allows redirect to malicious URL</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/244642">[2017] - Forgot password link doesn’t expire after used, only after some hours</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arneswinnen.net/2017/06/authentication-bypass-on-ubers-sso-via-subdomain-takeover/">[2017] - Authentication bypass on Uber’s Single Sign-On via subdomain takeover</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.economyofmechanism.com/github-saml.html">[2017] - SAML Bug in Github worth $15,000</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arneswinnen.net/2017/06/authentication-bypass-on-airbnb-via-oauth-tokens-theft/">[2017] - Authentication bypass on Airbnb via OAuth tokens theft</a></li>
+<li><a target="_blank" rel="noopener" href="https://mishresec.wordpress.com/2017/10/12/yahoo-bug-bounty-exploiting-oauth-misconfiguration-to-takeover-flickr-accounts/">[2017] - Yahoo Bug Bounty: Exploiting OAuth Misconfiguration To Takeover Flickr Accounts</a></li>
+<li><a target="_blank" rel="noopener" href="https://henryhoggard.co.uk/blog/Paypal-2FA-Bypass">[2016] - Paypal 2FA Bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/136169">[2016] - OneLogin authentication bypass on WordPress sites</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/138869">[2016] - OneLogin authentication bypass on WordPress sites via XMLRPC</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Information-Leakage/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Information-Leakage/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Information-Leakage"><a href="#Information-Leakage" class="headerlink" title="Information Leakage"></a>Information Leakage</h1><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@_bl4de/hidden-directories-and-files-as-a-source-of-sensitive-information-about-web-application-84e5c534e5ad">Hidden directories and files as a source of sensitive information about web application</a></li>
+</ul>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content/">RAFT file/directorie lists</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch">DirSearch</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/arthaud/git-dumper">Git Dumper</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/anantshri/svn-extractor">SVN Extractor</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sa7mon/S3Scanner">S3Scanner</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jordanpotti/AWSBucketDump">AWSBucketDump</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/753725">[2019] - NordVPN, Disclosure of User Information</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/700051">[2019] - Razer, Misconfigured s3 Bucket exposure</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/716292">[2019] - JumpCloud API Key leaked via Open Github Repository (4000$)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/291057">[2018] - MySQL username and password leaked in developer.valvesoftware.com via source code dislosure</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/218465">[2018] - [staging-engineering.gnip.com] Publicly accessible GIT directory</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/309714">[2018] - [support.wordcamp.org] - publicly accessible .svn repository</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@grayhatwarfare/how-to-search-for-open-amazon-s3-buckets-and-their-contents-https-buckets-grayhatwarfare-com-577b7b437e01">[2018] - How to search for Open Amazon s3 Buckets and their contents</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/HTTP-Verb-Tampering/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/HTTP-Verb-Tampering/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="HTTP-Verb-Tampering"><a href="#HTTP-Verb-Tampering" class="headerlink" title="HTTP Verb Tampering"></a>HTTP Verb Tampering</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering_(OTG-INPVAL-003)">https://wiki.owasp.org/index.php/Testing_for_HTTP_Verb_Tampering_(OTG-INPVAL-003)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/assets/REST_Security_Cheat_Sheet_Bypassing_VBAAC_with_HTTP_Verb_Tampering.pdf">https://cheatsheetseries.owasp.org/assets/REST_Security_Cheat_Sheet_Bypassing_VBAAC_with_HTTP_Verb_Tampering.pdf</a><br><a target="_blank" rel="noopener" href="https://www.hackingloops.com/how-to-find-website-is-vulnerable-to-http-verb-tampering/">https://www.hackingloops.com/how-to-find-website-is-vulnerable-to-http-verb-tampering/</a></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><a target="_blank" rel="noopener" href="https://hackerone.com/reports/826005">[2020] - Private account causes displayed through API</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/HTTP-Smuggling/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/HTTP-Smuggling/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Server-Side-Request-Forgery"><a href="#Server-Side-Request-Forgery" class="headerlink" title="Server Side Request Forgery"></a>Server Side Request Forgery</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_HTTP_Splitting/Smuggling_(OTG-INPVAL-016)">https://wiki.owasp.org/index.php/Testing_for_HTTP_Splitting/Smuggling_(OTG-INPVAL-016)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/request-smuggling">https://portswigger.net/web-security/request-smuggling</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pentestpartners.com/security-blog/http-request-smuggling-a-how-to/">https://www.pentestpartners.com/security-blog/http-request-smuggling-a-how-to/</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/919175">[2020] - HTTP request smuggling on Basecamp 2 allows web cache poisoning</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/867577">[2020] - Unauthenticated request smuggling on launchpad.37signals.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://labs.bishopfox.com/tech-blog/h2c-smuggling-request-smuggling-via-http/2-cleartext-h2c">[2020] - h2c Smuggling: Request Smuggling Via HTTP/2 Cleartext (h2c)</a></li>
+<li><a target="_blank" rel="noopener" href="https://honoki.net/2020/03/18/xxe-scape-through-the-front-door-circumventing-the-firewall-with-http-request-smuggling/">[2020] - XXE-scape through the front door: circumventing the firewall with HTTP request smuggling</a></li>
+<li><a target="_blank" rel="noopener" href="https://hipotermia.pw/bb/http-desync-account-takeover">[2020] - Account takeover via HTTP Request Smuggling</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/713285">[2020] - http request smuggling in pscp.tv and periscope.tv</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/771666">[2020] - Stealing Zomato X-Access-Token: in Bulk using HTTP Request Smuggling on api.zomato.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn">[2020] - HTTP Desync Attacks: Request Smuggling Reborn</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/498052">[2020] - Password theft login.newrelic.com via Request Smuggling</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/867952">[2020] - HTTP request Smuggling in Helium</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/735748">[2020] - HTTP request smuggling using malformed Transfer-Encoding header</a></li>
+<li><a target="_blank" rel="noopener" href="https://hipotermia.pw/bb/http-desync-idor">[2019] - HTTP Request Smuggling + IDOR</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/648434">[2019] - Multiple HTTP Smuggling reports</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/526880">[2019] - Request smuggling on ████████ (U.S. Dept Of Defense)</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Directory-Traversal-File-Include/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Directory-Traversal-File-Include/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Testing-Directory-Traversal-File-Include-OTG-AUTHZ-001"><a href="#Testing-Directory-Traversal-File-Include-OTG-AUTHZ-001" class="headerlink" title="Testing Directory Traversal/File Include (OTG-AUTHZ-001)"></a>Testing Directory Traversal/File Include (OTG-AUTHZ-001)</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_Directory_traversal/file_include_(OTG-AUTHZ-001)">https://wiki.owasp.org/index.php/Testing_Directory_traversal/file_include_(OTG-AUTHZ-001)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.offensive-security.com/metasploit-unleashed/file-inclusion-vulnerabilities/">File Inclusion Vulnerabilities - Offensive Scurity</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/cvv-1-local-file-inclusion-ebc48e0e479a">CVV #1: Local File Inclusion</a></li>
+</ul>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion%20-%20Path%20Traversal">PayloadsAllTheThings - Local/Remote File Inclusion</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/827052">[2020] - Arbitrary file read via the UploadsRewriter when moving and issue</a></li>
+<li><a target="_blank" rel="noopener" href="https://omespino.com/write-up-google-bug-bounty-lfi-on-production-servers-in-redacted-google-com-13337-usd/">[2019] - GoogleBugBounty: Lfi on Production Servers in “Springboard.Google.Com”, $13,337 USD</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.blackfan.ru/2018/01/pda-test.yandex.ru-file-reading.html">[2018] - Arbitrary File Reading on pda-test.yandex.ru</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@tungpun/how-i-found-my-very-first-cve-f02557492728">[2018] - How I found my very first CVE
+</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/7779">Local File Include on marketing-dam.yahoo.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/bugbounty-journey-from-lfi-to-rce-how-a69afe5a0899">Journey from LFI to RCE!!!</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@jonathanbouman/local-file-inclusion-at-ikea-com-e695ed64d82f">Local file inclusion at IKEA.com</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Cross-Site-Scripting/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Cross-Site-Scripting/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Cross-Site-Scripting"><a href="#Cross-Site-Scripting" class="headerlink" title="Cross-Site Scripting"></a>Cross-Site Scripting</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Cross-site_Scripting_(XSS)">https://wiki.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.hacker101.com/sessions/xss.html">Hacker101 - XSS Tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.acunetix.com/websitesecurity/cross-site-scripting/">Acunetix - Cross-site Scripting (XSS) Attackl</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.sheddow.xyz/css-timing-attack/">A timing attack with CSS selectors and Javascript</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://ysamm.com/?p=525">[2021] - XSS on forums.oculusvr.com leads to Oculus and Facebook account takeovers</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/856836">[2020] - [gitlab] - Stored XSS on PyPi simple API endpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/836649">[2020] - [gitlab] Stored XSS in markdown when redacting references</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/982510">[2020] - Self XSS in Shopify</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/968232">[2020] - Stored XSS in collabora via user name</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@alonnsoandres/25k-instagram-almost-xss-filter-link-facebook-bug-bounty-798b10c13b83">[2020] - $25K Instagram Almost XSS Filter Link — Facebook Bug Bounty</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/765679">[2020] - Stored XSS on upload files leads to steal cookie</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/824433">[2020] - Reflected XSS in https://blocked.myndr.net</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/509930">[2019] - Potential unprivileged Stored XSS through wp_targeted_link_rel</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@alex.birsan/the-bug-that-exposed-your-paypal-password-539fc2896da9">[2019] - The Bug That Exposed Your PayPal Password</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/723060">[2019] - Reflected XSS at https://pay.gold.razer.com escalated to account takeover</a></li>
+<li><a target="_blank" rel="noopener" href="https://research.securitum.com/xss-in-amp4email-dom-clobbering/">[2019] - XSS in GMail’s AMP4Email via DOM Clobbering</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/707720">[2019] - Stored XSS vulnerability in comments on *.wordpress.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/460911">[2019] - Wordpress Cross-Site Scripting Vulnerability Notification II</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/691611">[2019] - XSS in Shopify while logging using Google</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/526325">[2019] - Stored XSS in Wiki pages</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/643908">[2019] - Stored XSS on https://core.trac.wordpress.org</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/632017">[2019] - Zomato - Self-Stored XSS - Chained with login/logout CSRF</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@momenbasel/from-parameter-pollution-to-xss-d095e13be060">[2019] - From Parameter Pollution to XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@mrityunjoy/stored-xss-on-snapchat-5d704131d8fd">[2018] - Stored XSS on Snapchat</a></li>
+<li><a target="_blank" rel="noopener" href="https://s1gnalcha0s.github.io/dspl/2018/03/07/Stored-XSS-and-SSRF-Google.html">[2018] - Stored XSS, and SSRF in Google using the Dataset Publishing Language</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/419731">[2018] - Blind XSS in one of the Admin Dashboard</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/intigriti/how-i-found-a-stored-xss-on-thousands-of-webshops-cf6e3134b820">[2018] - How I found a stored XSS on thousands of webshops</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/311639">[2018] - Reflected XSS on https://www.zomato.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/422707">[2018] - Reflected XSS on $Any$.myshopify.com/admin</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/425200">[2018] - XSS on www.paypal.com/paypalme/my/landing</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lbherrera/writeups/tree/master/hxp-2018/blog">[2018] - hxp CTF 2018: µblog</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackernoon.com/cross-site-scripting-to-remote-code-execution-on-trellos-app-699512676f0c">[2017] - Cross-Site Scripting to Local File Inclusion on Trello’s App</a></li>
+<li><a target="_blank" rel="noopener" href="https://ysx.me.uk/app-maker-and-colaboratory-a-stored-google-xss-double-bill/">[2017] - App Maker and Colaboratory: a stored Google XSS double-bill</a></li>
+<li><a target="_blank" rel="noopener" href="https://ysx.me.uk/managed-apps-and-music-a-tale-of-two-xsses-in-google-play/">[2017] - Managed Apps and Music: a tale of two XSSes in Google Play</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.blackfan.ru/2017/09/devtwittercom-xss.html">[2017] - [dev.twitter.com] XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/262230">[2017] - Tinymce 2.4.0 XSS in Shopify</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/207042">[2017] - Stealing contact form data on www.hackerone.com using Marketo Forms XSS with postMessage frame-jumping and jQuery-JSONP</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/262852">[2017] - Reflected XSS - gratipay.com</a></li>
+<li><a target="_blank" rel="noopener" href="http://zhchbin.github.io/2017/08/30/Uber-XSS-via-Cookie/">[2017] - Uber XSS via Cookie</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/231053">[2017] - XSS on any Shopify shop via abuse of the HTML5 structured clone algorithm in postMessage listener on “/:id/digital_wallets/dialog”</a></li>
+<li><a target="_blank" rel="noopener" href="https://buer.haus/2017/03/08/airbnb-when-bypassing-json-encoding-xss-filter-waf-csp-and-auditor-turns-into-eight-vulnerabilities/">[2017] - Airbnb – When Bypassing JSON Encoding, XSS Filter, WAF, CSP, and Auditor turns into Eight Vulnerabilities</a></li>
+<li><a target="_blank" rel="noopener" href="https://httpsonly.blogspot.com/2016/08/turning-self-xss-into-good-xss-v2.html">[2016] - Turning Self-XSS into Good XSS v2: Challenge Completed but Not Rewarded</a></li>
+<li><a target="_blank" rel="noopener" href="http://zhchbin.github.io/2016/09/10/A-Valuable-XSS/">[2016] - Uber XSS 7000$</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.geekboy.ninja/blog/airbnb-bug-bounty-turning-self-xss-into-good-xss-2/">[2016] - AirBnb Bug Bounty: Turning Self-XSS into Good-XSS #2</a></li>
+<li><a target="_blank" rel="noopener" href="http://nootropic.me/blog/en/blog/2016/09/20/%E3%82%84%E3%81%AF%E3%82%8A%E3%83%8D%E3%83%83%E3%83%88%E3%82%B5%E3%83%BC%E3%83%95%E3%82%A3%E3%83%B3%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%9F%E3%82%89%E3%81%9F%E3%81%BE%E3%81%9F%E3%81%BEgoogle/">[2016] - Coming across an XSS vulnerability at Google sites</a></li>
+<li><a target="_blank" rel="noopener" href="https://labs.detectify.com/2016/10/24/combining-host-header-injection-and-lax-host-parsing-serving-malicious-data/">[2016] - Combining host header injection and lax host parsing serving malicious data</a></li>
+<li><a target="_blank" rel="noopener" href="https://mksben.l0.cm/2016/07/xxn-caret.html">[2016] - Abusing XSS Filter: One ^ leads to XSS(CVE-2016-3212)</a></li>
+<li><a target="_blank" rel="noopener" href="https://klikki.fi/adv/yahoo2.html">[2016] - Yahoo Mail stored XSS #2</a></li>
+<li><a target="_blank" rel="noopener" href="https://klikki.fi/adv/yahoo.html">[2016] - Yahoo Mail stored XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/152067">[2016] - Stored XSS on developer.uber.com via admin account compromise</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/150179">[2016] - Html Injection and Possible XSS in sms-be-vip.twitter.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://sites.google.com/site/bughunteruniversity/best-reports/account-recovery-xss">[2016] - Google Account Recovery XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.innerht.ml/rpo-gadgets/">[2016] - Google RPO Gadgets Lead to XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.it-securityguard.com/bugbounty-sleeping-stored-google-xss-awakens-a-5000-bounty/">[2016] - Sleeping stored Google XSS Awakens a $5000 Bounty</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.bentkowski.info/2015/04/xss-via-host-header-cse.html">[2015] - XSS via Host header - www.google.com/cse</a></li>
+<li><a target="_blank" rel="noopener" href="https://sites.google.com/site/bughunteruniversity/best-reports/openredirectsthatmatter">[2013] - Google, Open Redirects that Matter</a></li>
+<li><a target="_blank" rel="noopener" href="https://labs.detectify.com/2013/02/14/how-i-got-the-bug-bounty-for-mega-co-nz-xss/">[2013] - How I got the Bug Bounty for Mega.co.nz XSS</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.orenh.com/2013/11/google-account-recovery-vulnerability.html#comment-form">[2013] - Google Account Recovery Vulnerability</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Cross-Site-Request-Forgery/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Cross-Site-Request-Forgery/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Cross-Site-Request-Forgery"><a href="#Cross-Site-Request-Forgery" class="headerlink" title="Cross-Site Request Forgery"></a>Cross-Site Request Forgery</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_CSRF_(OTG-SESS-005)">https://wiki.owasp.org/index.php/Testing_for_CSRF_(OTG-SESS-005)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/csrf">Cross-site request forgery (CSRF)</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/419891">[2019] - Cross-Site Request Forgery (CSRF) vulnerability on API endpoint allows account takeovers</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/542047">[2019] - CSRF On Connect Account With Github Lead To Account Takeover</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/301862">[2019] - Path traversal leading to limited CSRF on GET requests on two endpoints</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/367966">[2019] - Vanilla: FileUpload Plugin: CSRF (delete all attached files)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/334139">[2019] - Instacart: CSRF Trial 14 days express subscription)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/423022">[2019] - Account takeover at https://try.discourse.org due to no CSRF protection in connecting Yahoo account</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Cross-Origin-Resource-Sharing/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Cross-Origin-Resource-Sharing/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Cross-Origin-Resource-Sharing-OTG-CLIENT-007"><a href="#Cross-Origin-Resource-Sharing-OTG-CLIENT-007" class="headerlink" title="Cross Origin Resource Sharing (OTG-CLIENT-007)"></a>Cross Origin Resource Sharing (OTG-CLIENT-007)</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007)">https://wiki.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/kb/papers/exploitingcorsmisconfigurations.pdf">Portswigger - Exploiting CORS Misconfigurations</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.corben.io/advanced-cors-techniques/">Advanced CORS Exploitation Techniques</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/">Exploiting Misconfigured Cross Origin Resource Sharing - geekboy.ninja</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geekboy.ninja/blog/tag/cross-origin-resource-sharing/">Exploiting Misconfigured CORS via Wildcard Subdomains - geekboy.ninja</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/896093">[2020] - (CORS) Cross-origin resource sharing misconfiguration in U.S. Dept Of Defense</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@jonathan.leitschuh/zoom-zero-day-4-million-webcams-maybe-an-rce-just-get-them-to-visit-your-website-ac75c83f4ef5">[2019] - Zoom Zero Day: 4+ Million Webcams &amp; maybe an RCE?</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.usejournal.com/cors-to-csrf-attack-c33a595d441">[2019] - CORS To CSRF Attack</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@nahoragg/a-simple-cors-misconfig-leaked-private-post-of-twitter-facebook-instagram-5f1a634feb9d">[2019] - A Simple CORS Misconfig Leaked Private Post Of Twitter, Facebook &amp; Instagram</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/426165">[2018] - [www.zomato.com] CORS Misconfiguration, could lead to disclosure of sensitive information</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/426147">[2018] - Twiiter - CORS misconfig | Account Takeover</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@saamux/full-account-takeover-through-cors-with-connection-sockets-179133384815">[2018] - Full Account Takeover through CORS with Connection Sockets</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@Skylinearafat/exploitation-of-cors-cross-origin-resource-sharing-on-edmodo-aa90431a3cb6">[2017] - Exploitation of Cross Origin Resource Sharing on Edmodo</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/235200">[2017] - Cross-origin resource sharing misconfig | steal user information - HackerOne</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.corben.io/tricky-CORS/">[2017] - Tricky CORS Bypass in Yahoo!</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@fran_bl4kd43m0n/how-to-hunt-insecure-cors-b72f0aa0e56f">[2018] - How to hunt insecure CORS</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Cookies-Attributes/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Cookies-Attributes/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Cookies-Attributes"><a href="#Cookies-Attributes" class="headerlink" title="Cookies Attributes"></a>Cookies Attributes</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_cookies_attributes_(OTG-SESS-002)">https://wiki.owasp.org/index.php/Testing_for_cookies_attributes_(OTG-SESS-002)</a></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@cryptographer_/recon-in-2-minutes-and-got-250-easy-630ab426843?_branch_match_id=526660511344466416">Recon in 2 Minutes and Got $250 Easy</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Poem_n</p>
+  <div class="site-description" itemprop="description">网安征程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Poem_n</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

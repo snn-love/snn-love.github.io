@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="网安征程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poem_n的博客">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Poem_n的博客">
+<meta property="og:description" content="网安征程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Poem_n">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Poem_n的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Poem_n的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Command-Injection/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Command-Injection/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Command-Injection-Execution-Code-Injection"><a href="#Command-Injection-Execution-Code-Injection" class="headerlink" title="Command Injection/Execution - Code Injection"></a>Command Injection/Execution - Code Injection</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Code_Injection_(OTG-INPVAL-012)">https://wiki.owasp.org/index.php/Testing_for_Code_Injection_(OTG-INPVAL-012)</a><br><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Command_Injection_(OTG-INPVAL-013)">https://wiki.owasp.org/index.php/Testing_for_Command_Injection_(OTG-INPVAL-013)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.secjuice.com/php-rce-bypass-filters-sanitization-waf/">How To Exploit PHP Remotely To Bypass Filters &amp; WAF Rules</a></li>
+<li><a target="_blank" rel="noopener" href="https://research.nccgroup.com/2020/07/05/rift-f5-networks-k52145254-tmui-rce-vulnerability-cve-2020-5902-intelligence/">[2020] - https://research.nccgroup.com/2020/07/05/rift-f5-networks-k52145254-tmui-rce-vulnerability-cve-2020-5902-intelligence/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.redtimmy.com/java-hacking/apache-tomcat-rce-by-deserialization-cve-2020-9484-write-up-and-exploit/">[2020] - Apache Tomcat RCE by deserialization (CVE-2020-9484) – write-up and exploi</a></li>
+<li><a target="_blank" rel="noopener" href="https://srcincite.io/blog/2020/06/26/sql-injection-double-uppercut-how-to-achieve-remote-code-execution-against-postgresql.html">[2020] - SQL Injection Double Uppercut :: How to Achieve Remote Code Execution Against PostgreSQL</a></li>
+</ul>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/commixproject/commix">https://github.com/commixproject/commix</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/365271">[2020] - Remote code execution on Basecamp.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/865652">[2020] - Blind SSRF in /appsuite/api/oxodocumentfilter&amp;action=addfile</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/955016">[2020] - GitLab-Runner on Windows <code>DOCKER_AUTH_CONFIG</code> container host Command Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://citadelo.com/en/blog/full-infrastructure-takeover-of-vmware-cloud-director-CVE-2020-3956/">[2020] - FULL INFRASTRUCTURE TAKEOVER OF VMWARE CLOUD DIRECTOR (CVE-2020-3956)</a></li>
+<li><a target="_blank" rel="noopener" href="https://spaceraccoon.dev/remote-code-execution-in-three-acts-chaining-exposed-actuators-and-h2-database">[2020] - Remote Code Execution in Three Acts: Chaining Exposed Actuators and H2 Database Aliases in Spring Boot 2</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.orange.tw/2020/09/how-i-hacked-facebook-again-mobileiron-mdm-rce.html">[2020] - How I Hacked Facebook Again! Unauthenticated RCE on MobileIron MDM</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/768322">[2020] - Remote Code Execution (Reverse Shell) - File Manager</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/460545">[2019] - Information disclosure of secret_key_base via encoding charcters</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/538771">[2019] - LFI with potential to RCE on ██████ using CVE-2019-3396</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/296991">[2019] - User-assisted RCE in Slack for macOS (from official site)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/506646">[2019] - Webshell via File Upload on ecjobs.starbucks.com.cn</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/430463">[2019] - Keybase client: downloaded executables lack “com.apple.quarantine” meta-attribute [macOS]</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/470637">[2019] - Slack - User-assisted RCE in Slack for macOS (from official site) due to improper quarantine meta-attribute handling for downloaded files</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/513154">[2019] - Valve - Unchecked weapon id in WeaponList message parser on client leads to RCE</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/403417">[2019] - Remote Code Execution on www.semrush.com/my_reports on Logo upload</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/587854">[2019] - Local files could be overwritten in GitLab, leading to remote command execution</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/591295">[2019] - Potential pre-auth RCE on Twitter VPN</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/576887">[2019] - U.S. Dept Of Defense - RCE on █████ via CVE-2017-10271</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/403417">[2019] - Remote Code Execution on www.semrush.com/my_reports on Logo upload</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/502758">[2019] - RCE and Complete Server Takeover of http://www.█████.starbucks.com.sg/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/423541">[2019] - Handlebars template injection and RCE in a Shopify app</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mohamedharon.com/2019/04/apache-strust-rce.html">[2019] - Remote Code Execution At Api.PrivateProgram.Com (CVE-2017-5638)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/">[2018] - Remote Code Execution on a Facebook server</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/510887">[2018] - [CVE-2018-18312] regcomp: heap-buffer-overflow write / reg_node overrun</a></li>
+<li><a target="_blank" rel="noopener" href="https://sites.google.com/view/harshjaiswalblog/rce-due-to-showexceptions">[2018] - RCE due to ShowExceptions</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/303061">[2018] - RCE using bash command injection on /system/images (toimitilat.lahitapiola.fi)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/395737">[2018] - RCE in <code>chrome://brave</code> available for navigation in Release build</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/401136">[2018] - Remote Code Execution on Proxy Service (as root)</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/how-an-instagrams-story-drives-me-to-a-remote-code-execution-9ff96458ec89">[2018] - How an Instagram’s Story drives me to a Remote Code Execution</a></li>
+<li><a target="_blank" rel="noopener" href="https://sites.google.com/site/testsitehacking/-36k-google-app-engine-rce">[2018] - $36k Google App Engine RCE</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/latex-to-rce-private-bug-bounty-program-6a0b5b33d26a">[2018] - Latex to RCE, Private Bug Bounty Program</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/412021">[2018] - Remote Command execution due to image tragick</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/410237">[2018] - Vanilla Forums ImportController index file_exists Unserialize Remote Code Execution Vulnerability</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/407552">[2018] - Vanilla Forums Gdn_Format unserialize() Remote Code Execution Vulnerability</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/410882">[2018] - Vanilla Forums domGetImages getimagesize Unserialize Remote Code Execution Vulnerability (critical)</a></li>
+<li><a target="_blank" rel="noopener" href="https://4lemon.ru/2017-01-17_facebook_imagetragick_remote_code_execution.html">[2017] - Facebook’s Imagetragick Story</a></li>
+<li><a target="_blank" rel="noopener" href="https://opsecx.com/index.php/2017/02/08/exploiting-node-js-deserialization-bug-for-remote-code-execution/">[2017] - Exploiting Node.js deserialization bug for Remote Code Execution</a></li>
+<li><a target="_blank" rel="noopener" href="https://ysx.me.uk/taking-note-xss-to-rce-in-the-simplenote-electron-client/">[2017] - Taking note: XSS to RCE in the Simplenote Electron client</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/how-i-got-5500-from-yahoo-for-rce-92fffb7145e6">[2017] - How I got 5500$ from Yahoo for RCE</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.orange.tw/2017/07/how-i-chained-4-vulnerabilities-on.html">[2017] - How I Chained 4 vulnerabilities on GitHub Enterprise, From SSRF Execution Chain to RCE!</a></li>
+<li><a target="_blank" rel="noopener" href="https://hawkinsecurity.com/2017/12/13/rce-via-spring-engine-ssti/">[2017] - Yahoo! RCE via Spring Engine SSTI</a></li>
+<li><a target="_blank" rel="noopener" href="https://samcurry.net/how-i-couldve-taken-over-the-production-server-of-a-yahoo-acquisition-through-command-injection/">[2017] - Command Injection in Yahoo Acquisition</a> </li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/212696">[2017] - RCE in Imgur by Command Line</a></li>
+<li><a target="_blank" rel="noopener" href="https://nahamsec.com/secure-your-jenkins-instance-or-hackers-will-force-you-to/">[2017] - RCE in Jenkin Instance</a></li>
+<li><a target="_blank" rel="noopener" href="https://devco.re/blog/2016/04/21/how-I-hacked-facebook-and-found-someones-backdoor-script-eng-ver/">[2016] - How I Hacked Facebook, and Found Someone’s Backdoor Script</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.evonide.com/how-we-broke-php-hacked-pornhub-and-earned-20000-dollar/">[2016] - How we broke PHP, hacked Pornhub and earned $20,000</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/158148">[2016] - Remote Code Execution by impage upload!</a></li>
+<li><a target="_blank" rel="noopener" href="https://5haked.blogspot.com/2016/10/how-i-hacked-pornhub-for-fun-and-profit.html">[2016] - How I hacked Pornhub for fun and profit - 10,000$</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.saynotolinux.com/blog/2016/08/15/jetbrains-ide-remote-code-execution-and-local-file-disclosure-vulnerability-analysis/">[2016] - JetBrains IDE Remote Code Execution and Local File Disclosure</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pranav-venkat.com/2016/03/command-injection-which-got-me-6000.html">[2016] - Google Cloud Remote Command Injection (RCE)</a></li>
+<li><a target="_blank" rel="noopener" href="http://artsploit.blogspot.com/2016/08/pprce2.html">[2016] - PayPal Node.js code injection (RCE)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/178152">[2016] - Gitlab - Read files on application server, leads to RCE</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/125980">[2016] - uber.com may RCE by Flask Jinja2 Template Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.vulnerability-lab.com/get_content.php?id=1474">[2015] - JDWP Remote Code Execution in PayPal</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.sec-down.com/wordpress/?p=581">[2015] - Telekom.de Remote Command Execution!</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.sec-down.com/wordpress/?p=578">[2015] - Magento Remote Code Execution Vulnerability!</a></li>
+<li><a target="_blank" rel="noopener" href="https://secgeek.net/bookfresh-vulnerability/">[2014] - RCE deal to tricky file upload</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.ubercomp.com/posts/2014-01-16_facebook_remote_code_execution">[2013] - XXE in OpenID Led to RCE</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.orange.tw/2013/11/yahoo-bug-bounty-part-2-loginyahoocom.html">[2013] - Yahoo Bug Bounty - *.login.yahoo.com Remote Code Execution</a></li>
+<li><a target="_blank" rel="noopener" href="https://secalert.net/#ebay-rce-ccs">[2013] - eBay PHP Parameter Injection lead to RCE</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Business-Logic/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Business-Logic/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Business-Logic"><a href="#Business-Logic" class="headerlink" title="Business Logic"></a>Business Logic</h1><h2 id="Business-Logic-References"><a href="#Business-Logic-References" class="headerlink" title="Business Logic References"></a>Business Logic References</h2><p><a target="_blank" rel="noopener" href="https://owasp.org/www-pdf-archive/2008.07.17.OWASP.ppt.pdf">https://owasp.org/www-pdf-archive/2008.07.17.OWASP.ppt.pdf</a></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/867513">[2020] - [shopify] Takeover an account that doesn’t have a Shopify ID and more</a></li>
+<li><a target="_blank" rel="noopener" href="https://bugreader.com/marcos@change-the-username-for-any-facebook-page-219">[2020] - Change the username for any Facebook Page</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/910300">[2020] - Email Confirmation Bypass in your-store.myshopify.com which leads to privilege escalation</a><br><a target="_blank" rel="noopener" href="https://hackerone.com/reports/790786">[2020] - [Gitlab] Members from parent group keep their access level on a subgroup transfer and are invisible</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Brute-Force/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Brute-Force/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Brute_force_attack">https://wiki.owasp.org/index.php/Brute_force_attack</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.kaspersky.com/resource-center/definitions/brute-force-attack">kaspersky - What’s a Brute Force Attack?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pentestpartners.com/security-blog/hydra-the-logon-cracker-a-brute-forcing-how-to-user-guide/">Hydra the logon cracker, a brute-forcing how-to user guide</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://www.anandpraka.sh/2016/03/how-i-could-have-hacked-your-facebook.html">How I could have hacked all Facebook accounts</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arneswinnen.net/2016/05/instabrute-two-ways-to-brute-force-instagram-account-credentials/">Two Ways to Brute-force Instagram Account Credentials</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.arneswinnen.net/2016/03/how-i-could-compromise-4-locked-instagram-accounts/">How I Could Compromise 4% (Locked) Instagram Accounts</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/125505">Possibility to brute force invite codes in riders.uber.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/144616">Brute-Forcing invite codes in partners.uber.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/127844">Web Authentication Endpoint Credentials Brute-Force Vulnerability</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/125707">Possibility to enumerate and bruteforce promotion codes in Uber iOS App</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Penetration-Test-Guide-based-on-the-OWASP-Extra"><a href="#Penetration-Test-Guide-based-on-the-OWASP-Extra" class="headerlink" title="Penetration Test Guide based on the OWASP + Extra"></a>Penetration Test Guide based on the OWASP + Extra</h1><p>This guide is for the penetration testers seeking for the appropriate test cases required during a penetration test project. I rearranged the <a target="_blank" rel="noopener" href="https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents">OWASP Testing Guide v4</a> from my point of view including <code>9 Test Classes</code> and each class has several <code>Test Cases</code> to conduct against the target. Each <code>Test Case</code> covers several OWASP tests which also is useful for the report document. I’ve also added <code>15 extra Tests Cases</code> marked by the <code>EXTRA-TEST</code>. I hope it will be useful in both penetration test projects and bug-bounty.</p>
+<h3 id="TODO"><a href="#TODO" class="headerlink" title="TODO:"></a>TODO:</h3><ol>
+<li>Add resources for each test.</li>
+</ol>
+<h2 id="Information-Gathering"><a href="#Information-Gathering" class="headerlink" title="Information Gathering"></a>Information Gathering</h2><ul>
+<li><ul>
+<li>   <strong>Fingerprint Technologies</strong></li>
+<li>   Fingerprint Web Server (OTG-INFO-002)</li>
+<li>   Enumerate Applications on Webserver (OTG-INFO-004)</li>
+<li>   Fingerprint Web Application Framework (OTG-INFO-008)</li>
+<li>   Fingerprint Web Application (OTG-INFO-009)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Information Leakage</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakage">Conduct Search Engine Discovery and Reconnaissance for Information Leakage (OTG-INFO-001)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakage">Review Webserver Metafiles for Information Leakage (OTG-INFO-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakage">Review Webpage Comments and Metadata for Information Leakage (OTG-INFO-005)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakage">Analysis of Error Codes (OTG-ERR-001)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakag">Analysis of Stack Traces (OTG-ERR-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Information-Leakage">Conduct a Fuzzing for Hidden and Sensitive Files or Directories (EXTRA-TEST-014)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Directory Indexing</strong></li>
+<li>   Search for Directory Indexing (EXTRA-TEST-001)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Storing Sensitive Information on Client Side</strong></li>
+<li>   Test Local Storage (OTG-CLIENT-012)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Configuration-and-Deployment-Management"><a href="#Configuration-and-Deployment-Management" class="headerlink" title="Configuration and Deployment Management"></a>Configuration and Deployment Management</h2><ul>
+<li><ul>
+<li>   <strong>Enumerate Infrastructure and Application Admin Interfaces</strong></li>
+<li>   Enumerate Infrastructure and Application Admin Interfaces (OTG-CONFIG-005)</li>
+<li>   Test Network/Infrastructure Configuration (OTG-CONFIG-001)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Hidden Resources Discovery</strong></li>
+<li>   Review Old, Backup and Unreferenced Files for Sensitive Information (OTG-CONFIG-004)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>HTTP Security Headers</strong></li>
+<li>   Testing for Lack of HTTP Security Headers (EXTRA-TEST-002)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Identity-Management-and-Authentication"><a href="#Identity-Management-and-Authentication" class="headerlink" title="Identity Management and Authentication"></a>Identity Management and Authentication</h2><ul>
+<li><ul>
+<li>   <strong>Secure Authentication Class</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Test User Registration Process (OTG-IDENT-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Weak Lock Out Mechanism (OTG-AUTHN-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Bypassing Authentication Schema (OTG-AUTHN-004)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Test Remember Password Functionality (OTG-AUTHN-005)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Browser Cache Weakness (OTG-AUTHN-006)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Weak Security Question/Answer (OTG-AUTHN-008)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Weak Password Change or Reset Functionalities (OTG-AUTHN-009)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Weaker Authentication in Alternative Channel (OTG-AUTHN-010)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Weak or Unenforced Username Policy (OTG-IDENT-005)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Default Credentials (OTG-AUTHN-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Authentication-Class">Testing for Two Factor Authentication Bypass (EXTRA-TEST-012)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Username Enumeration</strong></li>
+<li>   Testing for Account Enumeration and Guessable User Account (OTG-IDENT-004)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Testing for Recovering Sensitive Information</strong></li>
+<li>   Testing for Recovering Sensitive Information from Database (EXTRA-TEST-003)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Testing against Brute Force attack</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Brute-Force">Testing against Brute Force attack (EXTRA-TEST-004)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Password policy</strong></li>
+<li>   Testing for Weak password policy (OTG-AUTHN-007)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Testing for SSL over User Authentication</strong></li>
+<li>   Testing for Credentials Transported over an Encrypted Channel (OTG-AUTHN-001)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Authorization-and-Boundary-Test"><a href="#Authorization-and-Boundary-Test" class="headerlink" title="Authorization and Boundary Test"></a>Authorization and Boundary Test</h2><ul>
+<li><ul>
+<li>   <strong>User Access Control</strong></li>
+<li>   Test Role Definitions (OTG-IDENT-001)</li>
+<li>   Test Account Provisioning Process (OTG-IDENT-003)</li>
+<li>   Testing for Bypassing Authorization Schema (OTG-AUTHZ-002)</li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Privilege-Escalation">Testing for Privilege Escalation (OTG-AUTHZ-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/HTTP_Verb_Tampering">Testing for HTTP Verb Tampering (OTG-INPVAL-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/JSON-Web-Token-Flaw">Testing for JSON Web Token Flaw (EXTRA-TEST-006)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Origin-Resource-Sharing">Test Cross Origin Resource Sharing (OTG-CLIENT-007)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>File Inclusions</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Directory-Traversal-File-Include">Testing Directory Traversal/File Include (OTG-AUTHZ-001)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Execution after Redirect</strong></li>
+<li>   Execution after Redirect (EXTRA-TEST-005)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Cross Site Request Forgery</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Request-Forgery">Testing for Cross Site Request Forgery (CSRF) (OTG-SESS-005)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Secured File Upload</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Secured-File-Upload">Test Upload of Unexpected File Types (OTG-BUSLOGIC-008)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Secured-File-Upload">Test Upload of Malicious Files (OTG-BUSLOGIC-009)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Insecure Direct Object References</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Insecure-Direct-Object-References">Testing for Insecure Direct Object References (OTG-AUTHZ-004)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Secured Captcha implementation</strong></li>
+<li>   Test for Secured Captcha Workflow (EXTRA-TEST-007)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cookie-and-Session-Management"><a href="#Cookie-and-Session-Management" class="headerlink" title="Cookie and Session Management"></a>Cookie and Session Management</h2><ul>
+<li><ul>
+<li>   <strong>Testing for Cookies attributes</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cookies-Attributes">Testing for Cookies attributes (OTG-SESS-002)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Secure Session Management</strong></li>
+<li>   Testing for Bypassing Session Management Schema (OTG-SESS-001)</li>
+<li>   Testing for Session Fixation (OTG-SESS-003)</li>
+<li>   Testing for Exposed Session Variables (OTG-SESS-004)</li>
+<li>   Testing for Logout functionality (OTG-SESS-006)</li>
+<li>   Test Session Timeout (OTG-SESS-007)</li>
+<li>   Testing for Session puzzling (OTG-SESS-008)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h2><ul>
+<li><ul>
+<li>   <strong>Denial of Service</strong></li>
+<li>   Test for Denial of Service (EXTRA-TEST-008)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Input-Output-Validation"><a href="#Input-Output-Validation" class="headerlink" title="Input/Output Validation"></a>Input/Output Validation</h2><ul>
+<li><ul>
+<li>   <strong>Cross Site Scripting</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for Reflected Cross Site Scripting (OTG-INPVAL-001)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for Stored Cross Site Scripting (OTG-INPVAL-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for DOM based Cross Site Scripting (OTG-CLIENT-001)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for JavaScript Execution (OTG-CLIENT-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for HTML Injection (OTG-CLIENT-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for CSS Injection (OTG-CLIENT-005)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for Client Side Resource Manipulation (OTG-CLIENT-006)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Cross-Site-Scripting">Testing for Clickjacking (OTG-CLIENT-009)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>SQL Injection</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/SQL-Injection">Testing for SQL Injection (OTG-INPVAL-005)</a></li>
+<li>   Testing for Incubated Vulnerabilities (OTG-INPVAL-015)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>NoSQL Injection</strong></li>
+<li>   Testing for XPath Injection (OTG-INPVAL-010)</li>
+<li>   Testing for XML Injection (OTG-INPVAL-008)</li>
+<li>   Testing for MongoDB Injection (EXTRA-TEST-011)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Server Side Code Injection</strong></li>
+<li>   Testing for LDAP Injection (OTG-INPVAL-006)</li>
+<li>   Testing for ORM Injection (OTG-INPVAL-007)</li>
+<li>   Testing for SSI Injection (OTG-INPVAL-009)</li>
+<li>   IMAP/SMTP Injection (OTG-INPVAL-011)</li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Command-Injection">Testing for Code Injection (OTG-INPVAL-012)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Server-Side-Template-Injection">Testing for Server Side Template Injection (EXTRA-TEST-013)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Remote Command Execution</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Command-Injection">Testing for Command Injection (OTG-INPVAL-013)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Buffer Overflow</strong></li>
+<li>   Testing for Buffer Overflow (OTG-INPVAL-014)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>XML External Entity (XXE)</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/XML-External-Entity">Testing for XML External Entity (XXE) (EXTRA-TEST-009)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Server Side Request Forgery (SSRF)</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Server-Side-Request-Forgery">Testing for Server Side Request Forgery (SSRF) (EXTRA-TEST-010)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Open Redirect</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Open-Redirect">Testing for Client Side URL Redirect (OTG-CLIENT-004)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>HTTP Splitting/Smuggling</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/HTTP-Smuggling">Testing for HTTP Splitting/Smuggling (OTG-INPVAL-016)</a></li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Race Condition</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Race-Condition">Testing for Race Condition (EXTRA-TEST-15)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Testing-for-weak-Cryptography"><a href="#Testing-for-weak-Cryptography" class="headerlink" title="Testing for weak Cryptography"></a>Testing for weak Cryptography</h2><ul>
+<li><ul>
+<li>   <strong>Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection</strong></li>
+<li>   Testing for Weak SSL/TLS Ciphers, Insufficient Transport Layer Protection (OTG-CRYPST-001)</li>
+</ul>
+</li>
+<li><ul>
+<li>   <strong>Testing for Sensitive Information Sent via Unencrypted Channels</strong></li>
+<li>   Testing for Sensitive Information Sent via Unencrypted Channels (OTG-CRYPST-003)</li>
+<li>   Testing for Padding Oracle (OTG-CRYPST-002)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Workflow-Dataflow-Tests"><a href="#Workflow-Dataflow-Tests" class="headerlink" title="Workflow/Dataflow Tests"></a>Workflow/Dataflow Tests</h2><ul>
+<li><ul>
+<li>   <strong>Business Logic Testing</strong></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test Business Logic Data Validation (OTG-BUSLOGIC-001)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test Ability to Forge Requests (OTG-BUSLOGIC-002)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test Integrity Checks (OTG-BUSLOGIC-003)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test for Process Timing (OTG-BUSLOGIC-004)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test Number of Times a Function Can be Used Limits (OTG-BUSLOGIC-005)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test for the Circumvention of Work Flows (OTG-BUSLOGIC-006)</a></li>
+<li>   <a target="_blank" rel="noopener" href="https://github.com/Voorivex/pentest-guide/tree/master/Business-Logic">Test Defenses Against Application Mis-use (OTG-BUSLOGIC-007)</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/about_%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/25/about_%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0/" class="post-title-link" itemprop="url">about_拷贝构造</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-25 14:15:48 / 修改时间：14:31:52" itemprop="dateCreated datePublished" datetime="2021-11-25T14:15:48+08:00">2021-11-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一些小的点："><a href="#一些小的点：" class="headerlink" title="一些小的点："></a>一些小的点：</h3><p>&ensp;&ensp;&ensp;&ensp;#### 什么时候会出现拷贝构造？</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;使用一个对象初始化另一个对象时。</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;使用 函数的参数为对象本身时。</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;当函数返回为一个对象时。</p>
+<p>&ensp;&ensp;&ensp;&ensp;#### 为何要使用拷贝构造？</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;可以不使用，那么编译器会自动给你生成一个默认拷贝构造。创建使用时，可以自己决定那些东西拷贝。</p>
+<p>&ensp;&ensp;&ensp;&ensp;#### 拷贝构造是怎样进行拷贝构造？</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;概念：拷贝构造是成员级别的拷贝，</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;简单描述下：int型拷贝给int型，char型拷贝给char型，如果是一个对象，那么会让那个对象的类的拷贝构造来拷贝构造这个对象。</p>
+<p>&ensp;&ensp;&ensp;&ensp;#### 如果成员变量有指针，此时的拷贝构造是怎么拷贝的？</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;同上，会发生指针的拷贝。也就是说拷贝源指针和拷贝后的指针，这两个指针指向了同一片内存。</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;说到了指针就不得不说引用。发生的是两个引用捆绑着同一个变量。</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;#### 代码：如右——&gt;</p>
+<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">person</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s);</span><br><span class="line"><span class="comment">//  person(const person&amp;strust);</span></span><br><span class="line">  ~<span class="built_in">person</span>();</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//private:</span></span><br><span class="line">  <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//==================================================================</span></span><br><span class="line"><span class="comment">//定义</span></span><br><span class="line">person::<span class="built_in">person</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s)&#123;</span><br><span class="line">  name =<span class="keyword">new</span> <span class="keyword">char</span>[::<span class="built_in">strlen</span>(s)+<span class="number">1</span>];</span><br><span class="line">  ::<span class="built_in">strcpy</span>(name, s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">person::person(const person &amp; strust)&#123;</span></span><br><span class="line"><span class="comment">  num++;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">person::~<span class="built_in">person</span>()&#123;</span><br><span class="line">  <span class="keyword">delete</span>[] name;   <span class="comment">//array delete</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">//实例</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">person <span class="title">p1</span><span class="params">(<span class="string">&quot;wzz&quot;</span>)</span></span>;</span><br><span class="line">  <span class="function">person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>,p1.name);              <span class="comment">//0x18976</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%p&quot;</span>,p2.name);                <span class="comment">//0x18976</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="一些小的线："><a href="#一些小的线：" class="headerlink" title="一些小的线："></a>一些小的线：</h3><p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;A.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">howmany</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">howmany</span>()&#123;count++;<span class="built_in">print</span>(<span class="string">&quot;howmany()&quot;</span>);&#125;</span><br><span class="line">  <span class="built_in">howmany</span>(<span class="keyword">const</span> howmany&amp;x)&#123;count++;<span class="built_in">print</span>(<span class="string">&quot;howmany(howmany&amp;)&quot;</span>);&#125;    <span class="comment">//拷贝构造</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> string&amp; msg=<span class="string">&quot;&quot;</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(msg.<span class="built_in">size</span>()!=<span class="number">0</span>)cout&lt;&lt;msg&lt;&lt;<span class="string">&quot;:&quot;</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;count =&quot;</span>&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  ~<span class="built_in">howmany</span>()&#123;</span><br><span class="line">    count--;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;~howmany&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//pass and return BY VALUE;</span></span><br><span class="line"></span><br><span class="line"><span class="function">howmany <span class="title">f</span><span class="params">(howmany x)</span></span>&#123;</span><br><span class="line">  cout&lt;&lt;<span class="string">&quot;begin of f&quot;</span>&lt;&lt;endl;</span><br><span class="line">  x.<span class="built_in">print</span>(<span class="string">&quot;x argument inside f()&quot;</span>);</span><br><span class="line">  cout&lt;&lt;<span class="string">&quot;end of f&quot;</span>&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;                                   </span><br><span class="line">  howmany h;                               <span class="comment">//  +1</span></span><br><span class="line">  h.<span class="built_in">print</span>(<span class="string">&quot;after construction of h&quot;</span>);      <span class="comment">//   +1+1</span></span><br><span class="line">  howmany h2 =<span class="built_in">f</span>(h);                        <span class="comment">//  关键点！！        -1</span></span><br><span class="line">  h.<span class="built_in">print</span>(<span class="string">&quot;after call to f()&quot;</span>);            </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;                                <span class="comment">//   -1-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>当需要用一个对象去初始化一个对象时，会触发拷贝构造，如果自己没定义则编译器自动生成一个。</p>
+<h4 id="因此衍生出建议："><a href="#因此衍生出建议：" class="headerlink" title="因此衍生出建议："></a>因此衍生出建议：</h4><p>&ensp;&ensp;&ensp;&ensp;   当定义一个类时，固定流程  构造/析构函数—&gt;private保护属性—&gt;拷贝构造.</p>
+<p>&ensp;&ensp;&ensp;&ensp;</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/" class="post-title-link" itemprop="url">C++"This"指针</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-26 21:17:34" itemprop="dateCreated datePublished" datetime="2021-10-26T21:17:34+08:00">2021-10-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-29 14:07:11" itemprop="dateModified" datetime="2021-11-29T14:07:11+08:00">2021-11-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。</p>
+<h3 id="它有什么用？"><a href="#它有什么用？" class="headerlink" title="它有什么用？"></a>它有什么用？</h3><p>&ensp;&ensp;&ensp;&ensp;先放代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>(<span class="keyword">int</span> aa):<span class="built_in">i</span>(aa);</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">   cout&lt;&lt;<span class="string">&quot;i的值为：&quot;</span>&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">A <span class="title">a</span><span class="params">(<span class="number">20</span>)</span>,<span class="title">b</span><span class="params">(<span class="number">30</span>)</span></span>;</span><br><span class="line">a.out;       <span class="comment">//  输出 20       </span></span><br><span class="line">b.out;       <span class="comment">//  输出 30 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>编译器是如何判断出 a 的还是 b的指针的？就是”This”指针发挥的作用 。</p>
+<h3 id="它如何用？"><a href="#它如何用？" class="headerlink" title="它如何用？"></a>它如何用？</h3><p>两种用法：<br>1,在定义成员函数时，当函数需要返回 对象本身时。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] A::<span class="built_in">student</span> (<span class="keyword">double</span> Grade,<span class="keyword">double</span> student number,<span class="keyword">int</span> height)</span><br><span class="line">&#123;</span><br><span class="line">.......</span><br><span class="line"><span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">A  a;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type[]=a.<span class="built_in">student</span>(<span class="number">323238</span>,<span class="number">02103354</span>,<span class="number">180</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>2,当函数参数与类成员函数名字冲突时可以（this→i=i）来区别于传入的”i”</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">a</span>():<span class="built_in">i</span>(<span class="number">0</span>)；</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">this</span>-&gt;i+=i;              <span class="comment">// LOOK ME!!!!!</span></span><br><span class="line">cout&gt;&gt;<span class="string">&quot;i=&quot;</span>&gt;&gt;i&gt;&gt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">a A;</span><br><span class="line">A.<span class="built_in">add</span>(<span class="number">50</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="刨根溯源"><a href="#刨根溯源" class="headerlink" title="刨根溯源"></a>刨根溯源</h3><p>“This”指针到底是个啥？</p>
+<h4 id="它是成员函数和成员变量关联的桥梁。"><a href="#它是成员函数和成员变量关联的桥梁。" class="headerlink" title="它是成员函数和成员变量关联的桥梁。"></a>它是成员函数和成员变量关联的桥梁。</h4><pre><code>    成员函数最终被编译成与对象无关的普通函数，除了成员变量，会丢失所有信息，所以编译时要在成员函数中添加一个额外的参数，把当前对象的首地址传入，以此来关联成员函数和成员变量。
+
+                                            —-《 C++函数编译原理和成员函数的实现 》
+</code></pre>
+<h3 id="关于this指针的一个精典回答"><a href="#关于this指针的一个精典回答" class="headerlink" title="关于this指针的一个精典回答:"></a>关于this指针的一个精典回答:</h3><p>当你进入一个房子后，<br>你可以看见桌子、椅子、地板等，<br>但是房子你是看不到全貌了。<br>对于一个类的实例来说，<br>你可以看到它的成员函数、成员变量，<br>但是实例本身呢？<br>this是一个指针，它时时刻刻指向你这个实例本身。</p>
+<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>结束了我想讲个故事</p>
+<p>在很久很久之前，C++还在“胎中”时，设计员就想法设法的构造C++。又要加面向对象功能，又要保持原有的内存管理的能力，又要有布拉布拉的功能。</p>
+<p>设计员就想啊。。。。干脆就给C++加个面向对象的能力。在给C++来个翻译成C的功能（C++到C的翻译器）。不就O了~。偷懒总会有BUG，为了解决 成员变量于全局变量的区别，所以才引入了”This”指针。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" class="post-title-link" itemprop="url">phpMyAdmin的日志写入shell</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
+<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
+<ul>
+<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
+</li>
+<li><p>general log file 指的是日志的保存路径。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
+<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
+<p>将路径设置为网站目录，并命名为shell.php</p>
+<p>我们查询：</p>
+<p>SELECT ‘一句话木马’ ;</p>
+<p>POST中不用引号也可以</p>
+<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-05 16:29:40" itemprop="dateCreated datePublished" datetime="2021-10-05T16:29:40+08:00">2021-10-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-06 11:06:33" itemprop="dateModified" datetime="2021-10-06T11:06:33+08:00">2021-10-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>###时间<br>2021-10-6的清晨。我的博客基本成型。（这或许成为有趣的“东西”）</p>
+<p>###博客介绍<br>预计分为两个模块；网安 ，编程。</p>
+<p>文章内容含有无确定性阶段性。但我想做成阶段性流畅的文章顺序，并以此记录我学习成长过程。</p>
+<p>正是由于主要功能为记录学习与成长。所以内容极具主观和偏见，有很强的个人想法和误导性。</p>
+<h3 id="”回响“"><a href="#”回响“" class="headerlink" title="”回响“"></a>”回响“</h3><p>等我20岁回想时，这个博客或许会给予我“回响”。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Poem_n</p>
+  <div class="site-description" itemprop="description">网安征程</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Poem_n</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

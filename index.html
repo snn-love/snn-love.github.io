@@ -147,7 +147,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/about_%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/XML-External-Entity/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -161,90 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/11/25/about_%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0/" class="post-title-link" itemprop="url">about_拷贝构造</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-25 14:15:48 / 修改时间：14:31:52" itemprop="dateCreated datePublished" datetime="2021-11-25T14:15:48+08:00">2021-11-25</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="一些小的点："><a href="#一些小的点：" class="headerlink" title="一些小的点："></a>一些小的点：</h3><p>&ensp;&ensp;&ensp;&ensp;#### 什么时候会出现拷贝构造？</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;使用一个对象初始化另一个对象时。</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;使用 函数的参数为对象本身时。</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;当函数返回为一个对象时。</p>
-<p>&ensp;&ensp;&ensp;&ensp;#### 为何要使用拷贝构造？</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;可以不使用，那么编译器会自动给你生成一个默认拷贝构造。创建使用时，可以自己决定那些东西拷贝。</p>
-<p>&ensp;&ensp;&ensp;&ensp;#### 拷贝构造是怎样进行拷贝构造？</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;概念：拷贝构造是成员级别的拷贝，</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;简单描述下：int型拷贝给int型，char型拷贝给char型，如果是一个对象，那么会让那个对象的类的拷贝构造来拷贝构造这个对象。</p>
-<p>&ensp;&ensp;&ensp;&ensp;#### 如果成员变量有指针，此时的拷贝构造是怎么拷贝的？</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;同上，会发生指针的拷贝。也就是说拷贝源指针和拷贝后的指针，这两个指针指向了同一片内存。</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;说到了指针就不得不说引用。发生的是两个引用捆绑着同一个变量。</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;#### 代码：如右——&gt;</p>
-<p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">person</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">person</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s);</span><br><span class="line"><span class="comment">//  person(const person&amp;strust);</span></span><br><span class="line">  ~<span class="built_in">person</span>();</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//private:</span></span><br><span class="line">  <span class="keyword">char</span> *name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//==================================================================</span></span><br><span class="line"><span class="comment">//定义</span></span><br><span class="line">person::<span class="built_in">person</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s)&#123;</span><br><span class="line">  name =<span class="keyword">new</span> <span class="keyword">char</span>[::<span class="built_in">strlen</span>(s)+<span class="number">1</span>];</span><br><span class="line">  ::<span class="built_in">strcpy</span>(name, s);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">person::person(const person &amp; strust)&#123;</span></span><br><span class="line"><span class="comment">  num++;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">person::~<span class="built_in">person</span>()&#123;</span><br><span class="line">  <span class="keyword">delete</span>[] name;   <span class="comment">//array delete</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">//实例</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="function">person <span class="title">p1</span><span class="params">(<span class="string">&quot;wzz&quot;</span>)</span></span>;</span><br><span class="line">  <span class="function">person <span class="title">p2</span><span class="params">(p1)</span></span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%p\n&quot;</span>,p1.name);              <span class="comment">//0x18976</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%p&quot;</span>,p2.name);                <span class="comment">//0x18976</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="一些小的线："><a href="#一些小的线：" class="headerlink" title="一些小的线："></a>一些小的线：</h3><p>代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;A.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">howmany</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">howmany</span>()&#123;count++;<span class="built_in">print</span>(<span class="string">&quot;howmany()&quot;</span>);&#125;</span><br><span class="line">  <span class="built_in">howmany</span>(<span class="keyword">const</span> howmany&amp;x)&#123;count++;<span class="built_in">print</span>(<span class="string">&quot;howmany(howmany&amp;)&quot;</span>);&#125;    <span class="comment">//拷贝构造</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">const</span> string&amp; msg=<span class="string">&quot;&quot;</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(msg.<span class="built_in">size</span>()!=<span class="number">0</span>)cout&lt;&lt;msg&lt;&lt;<span class="string">&quot;:&quot;</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;count =&quot;</span>&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  ~<span class="built_in">howmany</span>()&#123;</span><br><span class="line">    count--;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;~howmany&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//pass and return BY VALUE;</span></span><br><span class="line"></span><br><span class="line"><span class="function">howmany <span class="title">f</span><span class="params">(howmany x)</span></span>&#123;</span><br><span class="line">  cout&lt;&lt;<span class="string">&quot;begin of f&quot;</span>&lt;&lt;endl;</span><br><span class="line">  x.<span class="built_in">print</span>(<span class="string">&quot;x argument inside f()&quot;</span>);</span><br><span class="line">  cout&lt;&lt;<span class="string">&quot;end of f&quot;</span>&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;                                   </span><br><span class="line">  howmany h;                               <span class="comment">//  +1</span></span><br><span class="line">  h.<span class="built_in">print</span>(<span class="string">&quot;after construction of h&quot;</span>);      <span class="comment">//   +1+1</span></span><br><span class="line">  howmany h2 =<span class="built_in">f</span>(h);                        <span class="comment">//  关键点！！        -1</span></span><br><span class="line">  h.<span class="built_in">print</span>(<span class="string">&quot;after call to f()&quot;</span>);            </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;                                <span class="comment">//   -1-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>当需要用一个对象去初始化一个对象时，会触发拷贝构造，如果自己没定义则编译器自动生成一个。</p>
-<h4 id="因此衍生出建议："><a href="#因此衍生出建议：" class="headerlink" title="因此衍生出建议："></a>因此衍生出建议：</h4><p>&ensp;&ensp;&ensp;&ensp;   当定义一个类时，固定流程  构造/析构函数—&gt;private保护属性—&gt;拷贝构造.</p>
-<p>&ensp;&ensp;&ensp;&ensp;</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Poem_n">
-      <meta itemprop="description" content="网安征程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poem_n的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/" class="post-title-link" itemprop="url">C++"This"指针</a>
+            <a href="/2021/12/04/pentest/XML-External-Entity/README/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -254,14 +171,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-10-26 21:17:34" itemprop="dateCreated datePublished" datetime="2021-10-26T21:17:34+08:00">2021-10-26</time>
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-29 14:07:11" itemprop="dateModified" datetime="2021-11-29T14:07:11+08:00">2021-11-29</time>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
               </span>
 
           
@@ -275,29 +192,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。</p>
-<h3 id="它有什么用？"><a href="#它有什么用？" class="headerlink" title="它有什么用？"></a>它有什么用？</h3><p>&ensp;&ensp;&ensp;&ensp;先放代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>(<span class="keyword">int</span> aa):<span class="built_in">i</span>(aa);</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">   cout&lt;&lt;<span class="string">&quot;i的值为：&quot;</span>&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">A <span class="title">a</span><span class="params">(<span class="number">20</span>)</span>,<span class="title">b</span><span class="params">(<span class="number">30</span>)</span></span>;</span><br><span class="line">a.out;       <span class="comment">//  输出 20       </span></span><br><span class="line">b.out;       <span class="comment">//  输出 30 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>编译器是如何判断出 a 的还是 b的指针的？就是”This”指针发挥的作用 。</p>
-<h3 id="它如何用？"><a href="#它如何用？" class="headerlink" title="它如何用？"></a>它如何用？</h3><p>两种用法：<br>1,在定义成员函数时，当函数需要返回 对象本身时。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] A::<span class="built_in">student</span> (<span class="keyword">double</span> Grade,<span class="keyword">double</span> student number,<span class="keyword">int</span> height)</span><br><span class="line">&#123;</span><br><span class="line">.......</span><br><span class="line"><span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">A  a;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> type[]=a.<span class="built_in">student</span>(<span class="number">323238</span>,<span class="number">02103354</span>,<span class="number">180</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>2,当函数参数与类成员函数名字冲突时可以（this→i=i）来区别于传入的”i”</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="built_in">a</span>():<span class="built_in">i</span>(<span class="number">0</span>)；</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">this</span>-&gt;i+=i;              <span class="comment">// LOOK ME!!!!!</span></span><br><span class="line">cout&gt;&gt;<span class="string">&quot;i=&quot;</span>&gt;&gt;i&gt;&gt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">a A;</span><br><span class="line">A.<span class="built_in">add</span>(<span class="number">50</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="刨根溯源"><a href="#刨根溯源" class="headerlink" title="刨根溯源"></a>刨根溯源</h3><p>“This”指针到底是个啥？</p>
-<h4 id="它是成员函数和成员变量关联的桥梁。"><a href="#它是成员函数和成员变量关联的桥梁。" class="headerlink" title="它是成员函数和成员变量关联的桥梁。"></a>它是成员函数和成员变量关联的桥梁。</h4><pre><code>    成员函数最终被编译成与对象无关的普通函数，除了成员变量，会丢失所有信息，所以编译时要在成员函数中添加一个额外的参数，把当前对象的首地址传入，以此来关联成员函数和成员变量。
-
-                                            —-《 C++函数编译原理和成员函数的实现 》
-</code></pre>
-<h3 id="关于this指针的一个精典回答"><a href="#关于this指针的一个精典回答" class="headerlink" title="关于this指针的一个精典回答:"></a>关于this指针的一个精典回答:</h3><p>当你进入一个房子后，<br>你可以看见桌子、椅子、地板等，<br>但是房子你是看不到全貌了。<br>对于一个类的实例来说，<br>你可以看到它的成员函数、成员变量，<br>但是实例本身呢？<br>this是一个指针，它时时刻刻指向你这个实例本身。</p>
-<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>结束了我想讲个故事</p>
-<p>在很久很久之前，C++还在“胎中”时，设计员就想法设法的构造C++。又要加面向对象功能，又要保持原有的内存管理的能力，又要有布拉布拉的功能。</p>
-<p>设计员就想啊。。。。干脆就给C++加个面向对象的能力。在给C++来个翻译成C的功能（C++到C的翻译器）。不就O了~。偷懒总会有BUG，为了解决 成员变量于全局变量的区别，所以才引入了”This”指针。</p>
+          <h1 id="External-XML-Entity"><a href="#External-XML-Entity" class="headerlink" title="External XML Entity"></a>External XML Entity</h1><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bugcrowd.com/advice-from-a-bug-hunter-xxe/">Advice From a Bug Hunter XXE - Bugcrowd</a></li>
+<li><a target="_blank" rel="noopener" href="https://lab.wallarm.com/xxe-that-can-bypass-waf-protection-98f679452ce0">XXE that can Bypass WAF Protection</a><h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20injection">PayloadsAllTheThings - SSRF Injection</a></li>
+</ul>
+<h2 id="Tools-Payloads-1"><a href="#Tools-Payloads-1" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><p><a target="_blank" rel="noopener" href="https://gist.github.com/honoki/d7035c3ccca1698ec7b541c77b9410cf">XXE Payloads</a></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/836877">[2020] - XXE through injection of a payload in the XMP metadata of a JPEG file</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/500515">[2019] - XXE at ecjobs.starbucks.com.cn/retail/hxpublic_v6/hxdynamicpage6.aspx</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/312543">[2018] - XXE in Site Audit function exposing file and directory contents</a></li>
+<li><a target="_blank" rel="noopener" href="https://hawkinsecurity.com/2018/03/24/gaining-filesystem-access-via-blind-oob-xxe/">[2018] - Gaining Filesystem Access via Blind OOB XXE</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/334488">[2018] - Blind XXE via Powerpoint files</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/395296">[2018] - Phone Call to XXE via Interactive Voice Response</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/347139">[2018] - LFI and SSRF via XXE in Emblem Editor in Rockstar Games</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/315837">[2018] - Blind XXE in Autodiscover Parser</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.honoki.net/2018/12/from-blind-xxe-to-root-level-file-read-access/">[2018] - From blind XXE to root-level file read access</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.secmasters.com/blog/out-of-band-xxe-in-prizmdoc-cve-2018-15805">[2018] - Out-of-band XXE in PrizmDoc (CVE-2018–15805)</a></li>
+<li><a target="_blank" rel="noopener" href="https://r00thunt.com/2018/10/05/blind-xml-external-entities-out-of-band-channel-vulnerability-paypal-case-study/">[2018] - Blind XML External Entities Out-Of-Band Channel Vulnerability : PayPal Case Study</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/248668">[2017] - XXE on sms-be-vip.twitter.com in SXMP Processor</a></li>
+<li><a target="_blank" rel="noopener" href="https://httpsonly.blogspot.com/2017/01/0day-writeup-xxe-in-ubercom.html">[2017] - XXE in Uber to read local files</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/occupe/Writeups-CTF/blob/master/ASIS-CTF/Gsa%20File%20server/Readme.md">[2017] - GSA File Server - ASIS CTF Finals 2017</a></li>
+<li><a target="_blank" rel="noopener" href="http://nerdint.blogspot.com/2016/08/blind-oob-xxe-at-uber-26-domains-hacked.html">[2016] - http://nerdint.blogspot.com/2016/08/blind-oob-xxe-at-uber-26-domains-hacked.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://web-in-security.blogspot.com/2014/11/detecting-and-exploiting-xxe-in-saml.html">[2014] - Detecting and Exploiting XXE in SAML</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.detectify.com/2014/04/11/how-we-got-read-access-on-googles-production-servers/">[2014] - How we got read access on Google’s production servers</a></li>
+</ul>
 
       
     </div>
@@ -317,7 +236,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/SQL-Injection/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -331,7 +250,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" class="post-title-link" itemprop="url">phpMyAdmin的日志写入shell</a>
+            <a href="/2021/12/04/pentest/SQL-Injection/README/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -340,10 +259,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
 
           
 
@@ -356,21 +281,257 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
-<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
-<ul>
-<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
+          <h1 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h1><p><a target="_blank" rel="noopener" href="https://www.acunetix.com/websitesecurity/sql-injection/">What is SQL Injection (SQLi) and How to Prevent It - Acunetix</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection">What is SQL injection (SQLi)? - PortSwigger</a></li>
+</ul>
+<h2 id="Cheat-Sheets"><a href="#Cheat-Sheets" class="headerlink" title="Cheat Sheets"></a>Cheat Sheets</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/">Netsparker Sqli CheatSheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://sqlwiki.netspi.com/">NetSPI SQL Injection Wiki! Really Good</a></li>
+<li><a target="_blank" rel="noopener" href="https://websec.ca/kb/sql_injection">websec.cs handy SQLi CheatSheet</a></li>
+</ul>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/sqlmapproject/sqlmap">sqlmap</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection">Handy Payloads</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/816254">[2020] - SQL injection on contactws.contact-sys.com in TScenObject action ScenObjects leads to remote code execution</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/758654">[2020] - Blind SQL Injection - InnoGames </a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/531051">[2020] - SQL Injection Extracts Starbucks Enterprise Accounting, Financial, Payroll Database</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/786044">[2020] - [windows10.hi-tech.mail.ru] Blind SQL Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rcesecurity.com/2019/09/H1-4420-From-Quiz-to-Admin-Chaining-Two-0-Days-to-Compromise-an-Uber-Wordpress/">[2019] - H1-4420: From Quiz to Admin - Chaining Two 0-Days to Compromise An Uber Wordpress</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.parthmalhotra.com/pwning-child-company-to-get-access-to-parentcompanys-slack-team/">[2019] - Pwning child company to get access to ParentCompany’s Slack Team</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.noob.ninja/2019/07/exploiting-tricky-blind-sql-injection.html">[2019] - EXPLOITING A TRICKY BLIND SQL INJECTION INSIDE LIMIT CLAUSE</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@kgaber99/sql-injection-in-forget-password-function-3c945512e3cb">[2019] - SQL Injection in Forget Password Function</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@ariffadhlullah2310/sql-injection-bug-bounty-110e92e71ec3">[2019] - SQL Injection Bug Bounty POC!</a></li>
+<li><a target="_blank" rel="noopener" href="https://jspin.re/fileupload-blind-sqli/">[2019] - Blind (time-based) SQLi - Bug Bounty</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@saadahmedx/sql-injection-c87a390afdd3">[2019] - SQl Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@frostnull/sql-injection-through-user-agent-44a1150f6888">[2019] - SQL injection through User-Agent</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.redforce.io/sql-injection-in-insert-update-query-without-comma/">[2019] - Comma is forbidden! No worries!! Inject in insert/update queries without it</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@mahitman1/hacking-a-crypto-debit-card-service-730f287aaee7">[2019] - Hacking a Crypto Debit Card Service</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Server-Side-Template-Injection/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Server-Side-Template-Injection/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Server-Side-Tempplate-Injection"><a href="#Server-Side-Tempplate-Injection" class="headerlink" title="Server Side Tempplate Injection"></a>Server Side Tempplate Injection</h1><p><a target="_blank" rel="noopener" href="https://www.netsparker.com/blog/web-security/server-side-template-injection/">Server-Side Template Injection Introduction &amp; Example</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/blog/server-side-template-injection">Server-Side Template Injection - PortSwigger</a></li>
+</ul>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20injections">PayloadsAllTheThings - SSRF Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/epinna/tplmap">Server-Side Template Injection and Code Injection Detection and Exploitation Tool</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://mahmoudsec.blogspot.com/2019/04/handlebars-template-injection-and-rce.html">$10,000 bounty in Shopify - Server Side Template Injection in Return Magic email templates?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.betterhacker.com/2018/12/rce-in-hubspot-with-el-injection-in-hubl.html">RCE in Hubspot with EL injection in HubL</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/125980">uber.com may RCE by Flask Jinja2 Template Injection</a></li>
+<li><a target="_blank" rel="noopener" href="https://hawkinsecurity.com/2017/12/13/rce-via-spring-engine-ssti/">YAHOO! RCE via Spring Engine SSTI</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/164224">Server side template injection via Smarty template </a></li>
+<li><a target="_blank" rel="noopener" href="http://ha.cker.info/exploitation-of-server-side-template-injection-with-craft-cms-plguin-seomatic/">Exploitation of Server Side Template Injection with Craft CMS plugin SEOmatic &lt;=3.1.3 | CVE-2018-14716</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/frapp%C3%A9-technologies-erpnext-server-side-template-injection-74e1c95ec872">Frappé Technologies ERPNext Server Side Template Injection</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Server-Side-Request-Forgery/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Server-Side-Request-Forgery/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Server-Side-Request-Forgery"><a href="#Server-Side-Request-Forgery" class="headerlink" title="Server Side Request Forgery"></a>Server Side Request Forgery</h1><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf">A New Era Of SSRF - Blackhat</a></p>
 </li>
-<li><p>general log file 指的是日志的保存路径。</p>
+<li><p><a target="_blank" rel="noopener" href="https://www.hackerone.com/blog-How-To-Server-Side-Request-Forgery-SSRF">HOW TO: SERVER-SIDE REQUEST FORGERY (SSRF) - HackerOne</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@madrobot/ssrf-server-side-request-forgery-types-and-ways-to-exploit-it-part-1-29d034c27978">[2019] - SSRF - Server Side Request Forgery (Types and ways to exploit it) Part-1</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@madrobot/ssrf-server-side-request-forgery-types-and-ways-to-exploit-it-part-2-a085ec4332c0">[2019] - SSRF - Server Side Request Forgery (Types and ways to exploit it) Part-2</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://medium.com/@madrobot/ssrf-server-side-request-forgery-types-and-ways-to-exploit-it-part-3-b0f5997e3739">[2019] - SSRF - Server Side Request Forgery (Types and ways to exploit it) Part-3</a></p>
+<h2 id="Tools-Payloads"><a href="#Tools-Payloads" class="headerlink" title="Tools / Payloads"></a>Tools / Payloads</h2></li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SSRF%20injection">PayloadsAllTheThings - SSRF Injection</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/SSRFmap">SSRF map</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html">OWASP Server-Side Request Forgery Cheat Sheet</a></p>
 </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
-<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
-<p>将路径设置为网站目录，并命名为shell.php</p>
-<p>我们查询：</p>
-<p>SELECT ‘一句话木马’ ;</p>
-<p>POST中不用引号也可以</p>
-<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://nechudav.blogspot.com/2020/11/31k-ssrf-in-google-cloud-monitoring.html">[2020] - 31k$ SSRF in Google Cloud Monitoring led to metadata exposure</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/776017">[2020] - Half-Blind SSRF found in kube/cloud-controller-manager can be upgraded to complete SSRF (fully crafted HTTP requests) in vendor managed k8s service</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/878779">[2020] - Full Read SSRF on Gitlab’s Internal Grafana</a></li>
+<li><a target="_blank" rel="noopener" href="https://swarm.ptsecurity.com/openfire-admin-console/">[2020] - Vulnerabilities in the Openfire Admin Console</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@win3zz/how-i-made-31500-by-submitting-a-bug-to-facebook-d31bb046e204">[2020] - How I made $31500 by submitting a bug to Facebook</a></li>
+<li><a target="_blank" rel="noopener" href="https://nahamsec.com/posts/my-expense-report-resulted-in-a-server-side-request-forgery-ssrf-on-lyft">[2020] - My expense report resulted in a server-side request forgery (ssrf) on LYFT</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/809248">[2020] - [gitlab] SSRF into Shared Runner, by replacing dockerd with malicious server in Executor</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/925527">[2020] - Blind HTTP GET SSRF via website icon fetch (bypass of pull#812)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/895696">[2020] - Blind SSRF on https://labs.data.gov/dashboard/Campaign/json_status/ Endpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/story-of-a-2-5k-bounty-ssrf-on-zimbra-led-to-dump-all-credentials-in-clear-text-6fe826005ccc">[2020] - Story of a 2.5k Bounty — SSRF on Zimbra Led to Dump All Credentials in Clear Text</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/895696">[2020] - Blind SSRF on https://labs.data.gov/dashboard/Campaign/json_status/ Endpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/632101">[2020] - Gitlab - Server Side Request Forgery mitigation bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@hackyzh/ssrf-in-azure-devops-services-88e7fdd58109">[2019] - SSRF in Azure DevOps Services</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/643622">[2019] - Semrush - SSRF In Get Video Contents</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/296045">[2019] - SSRF in VCARD photo upload functionality</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/303378">[2019] - SSRF - Blacklist bypass for mail account addition</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/299135">[2019] - SSRF - RSS feed, blacklist bypass (301 re-direct)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/299130">[2019] - SSRF - RSS feed, blacklist bypass (IP Formatting)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/386292">[2019] - Slack - Bypass of the SSRF protection in Event Subscriptions parameter.</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/381129">[2019] - Slack - SSRF in api.slack.com, using slash commands and bypassing the protections.</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/508459">[2019] - Omise - SSRF in webhooks leads to AWS private keys disclosure</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/398799">[2019] - Unauthenticated blind SSRF in OAuth Jira authorization controller</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/409701">[2019] - SSRF in hatchful.shopify.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/374818">[2019] - SSRF in rompager-check</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/369451">[2019] - Gitlab - SSRF in CI after first run</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.notsosecure.com/exploiting-ssrf-in-aws-elastic-beanstalk/">[2019] - Exploiting SSRF in AWS Elastic Beanstalk</a></li>
+<li><a target="_blank" rel="noopener" href="https://opnsec.com/2018/07/into-the-borg-ssrf-inside-google-production-network/">[2018] - Into the Borg – SSRF inside Google production network</a></li>
+<li><a target="_blank" rel="noopener" href="https://s1gnalcha0s.github.io/dspl/2018/03/07/Stored-XSS-and-SSRF-Google.html">[2018] - Stored XSS, and SSRF in Google using the Dataset Publishing Language</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/347139">[2018] - Rockstar Games - LFI and SSRF via XXE in emblem editor</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@sivakrishnasamireddi/just-another-tale-of-severe-bugs-on-a-private-program-405870b03532">[2018] - Just another tale of severe bugs on a private program.</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/adminer-script-results-to-pwning-server-private-bug-bounty-program-fe6d8a43fe6f">[2018] - Adminer Script Results to Pwning Server?, Private Bug Bounty Program</a></li>
+<li><a target="_blank" rel="noopener" href="https://honoki.net/2018/12/12/from-blind-xxe-to-root-level-file-read-access/">[2018] - From blind XXE to root-level file read access</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/398641">[2018] - SSRF on duckduckgo.com/iu/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/358119">[2018] - SSRF in proxy.duckduckgo.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/289187">[2018] - DNS pinning SSRF</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/415682">[2018] - Remote Command Execution in a internal server to get the flag file</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/253558">[2018] - SSRF in Cloudflare</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/392859">[2018] - Sending Emails from DNSDumpster - Server-Side Request Forgery to Internal SMTP Access</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/243865">[2018] - concrete5 - SSRF thru File Replace</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/411865">[2018] - Blind SSRF at https://chaturbate.com/notifications/update_push/</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/301924">[2018] - SSRF vulnerability in gitlab.com webhook</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/374737">[2018] - Blind SSRF on errors.hackerone.net due to Sentry misconfiguration</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteuppiercing-the-veil-server-side-request-forgery-to-niprnet-access-c358fd5e249a">[2018] - Piercing the Veil: Server Side Request Forgery to NIPRNet access</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/bugbountywriteup/piercing-the-veil-server-side-request-forgery-to-niprnet-access-c358fd5e249a">[2018] - Piercing the Veil: Server Side Request Forgery to NIPRNet access</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/341876">[2018] - SSRF in Exchange leads to ROOT access in all instances - Shopify</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@zain.sabahat/exploiting-ssrf-like-a-boss-c090dc63d326">[2018] - SSRF in Jira - Escalation of an SSRF to Local File Read!</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/382612">[2018] - SSRF on *shopifycloud.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@tungpun/from-ssrf-to-local-file-disclosure-58962cdc589f">[2017] - From SSRF to Local File Disclosure</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/228377">[2017] - Discourse - SSRF in upload IMG through URL</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@elberandre/1-000-ssrf-in-slack-7737935d3884">[2017] - $1.000 SSRF in Slack</a></li>
+<li><a target="_blank" rel="noopener" href="https://hack-ed.net/2017/11/07/a-nifty-ssrf-bug-bounty-write-up/">[2017] - A Nifty SSRF Bug Bounty Write Up</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/223203">[2017] - SVG Server Side Request Forgery (SSRF)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/265050">[2017] - Rockstar Games - Blind SSRF in emblem editor (2)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/115857">[2016] - SSRF and local file read in video to gif converter</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/115748">[2016] - SSRF in https://imgur.com/vidgif/url</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/53088">[2015] - Phabricator - SSRF vulnerability (access to metadata server on EC2 and OpenStack)</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/56828">[2015] - Dropbox - SSRF vulnerablity in app webhooks</a></li>
+</ul>
 
       
     </div>
@@ -390,7 +551,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Secured-File-Upload/README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -404,7 +565,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/10/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2021/12/04/pentest/Secured-File-Upload/README/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -414,14 +575,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-10-05 16:29:40" itemprop="dateCreated datePublished" datetime="2021-10-05T16:29:40+08:00">2021-10-05</time>
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-06 11:06:33" itemprop="dateModified" datetime="2021-10-06T11:06:33+08:00">2021-10-06</time>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
               </span>
 
           
@@ -435,11 +596,396 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>###时间<br>2021-10-6的清晨。我的博客基本成型。（这或许成为有趣的“东西”）</p>
-<p>###博客介绍<br>预计分为两个模块；网安 ，编程。</p>
-<p>文章内容含有无确定性阶段性。但我想做成阶段性流畅的文章顺序，并以此记录我学习成长过程。</p>
-<p>正是由于主要功能为记录学习与成长。所以内容极具主观和偏见，有很强的个人想法和误导性。</p>
-<h3 id="”回响“"><a href="#”回响“" class="headerlink" title="”回响“"></a>”回响“</h3><p>等我20岁回想时，这个博客或许会给予我“回响”。</p>
+          <h1 id="Cross-Site-Scripting"><a href="#Cross-Site-Scripting" class="headerlink" title="Cross-Site Scripting"></a>Cross-Site Scripting</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Test_Upload_of_Unexpected_File_Types_(OTG-BUSLOGIC-008)">https://wiki.owasp.org/index.php/Test_Upload_of_Unexpected_File_Types_(OTG-BUSLOGIC-008)</a><br><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Test_Upload_of_Malicious_Files_(OTG-BUSLOGIC-009)">https://wiki.owasp.org/index.php/Test_Upload_of_Malicious_Files_(OTG-BUSLOGIC-009)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload">Unrestricted File Upload</a></li>
+<li><a target="_blank" rel="noopener" href="https://thibaudrobin.github.io/articles/bypass-filter-upload/">[WEB] Bypass file upload filter with .htaccess</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/900179">[2020] - Unrestricted File Upload Leads to XSS &amp; Potential RCE</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/748903">[2019] - Unrestricted file upload in www.semrush.com &gt; /my_reports/api/v1/upload/image</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Race-Condition/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Race-Condition/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Race-Condition"><a href="#Race-Condition" class="headerlink" title="Race Condition"></a>Race Condition</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/web-security/logic-flaws/examples">Business Logic Vulnerabilities</a></li>
+</ul>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@ciph3r7r0ll/race-condition-bug-in-web-app-a-use-case-21fd4df71f0e">Race Condition Bug In Web App: A Use Case</a></li>
+<li><a target="_blank" rel="noopener" href="https://resources.securitycompass.com/blog/moving-beyond-the-owasp-top-10-part-1-race-conditions-2">Moving Beyond The OWASP Top 10, Part 1: Race Conditions</a></li>
+</ul>
+<h2 id="Examples-Race-Condition"><a href="#Examples-Race-Condition" class="headerlink" title="Examples (Race Condition)"></a>Examples (Race Condition)</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/927384">[2020] - Race Condition when following a user</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/swlh/hacking-banks-with-race-conditions-2f8d55b45a4b">[2020] - Hacking Banks With Race Conditions</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@pravinponnusamy/race-condition-vulnerability-found-in-bug-bounty-program-573260454c43">[2020] - Race Condition vulnerability found in bug-bounty program</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@ciph3r7r0ll/race-condition-bug-in-web-app-a-use-case-21fd4df71f0e">[2018] - Race Condition Bug In Web App: A Use Case</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@valeriyshevchenko/how-to-check-race-conditions-in-web-applications-338f73937992">[2017] - How to check Race Conditions in Web Applications</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Privilege-Escalation/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Privilege-Escalation/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Privilege-Escalation"><a href="#Privilege-Escalation" class="headerlink" title="Privilege Escalation"></a>Privilege Escalation</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Privilege_escalation_(OTG-AUTHZ-003)">https://wiki.owasp.org/index.php/Testing_for_Privilege_escalation_(OTG-AUTHZ-003)</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/910300">[2020] - Email Confirmation Bypass in your-store.myshopify.com which leads to privilege escalation</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/267781">[2019] - Users can enable API access for free via mass assignment</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Others/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Others/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Other-Reports"><a href="#Other-Reports" class="headerlink" title="Other Reports"></a>Other Reports</h1><p>Uncategorized reports go here</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><a target="_blank" rel="noopener" href="https://hackerone.com/reports/461780">[2019] - MitM attacks on HSTS-protected hosts are possible</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/Open-Redirect/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/Open-Redirect/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Open-Redirect"><a href="#Open-Redirect" class="headerlink" title="Open Redirect"></a>Open Redirect</h1><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/Testing_for_Client_Side_URL_Redirect_(OTG-CLIENT-004)">https://wiki.owasp.org/index.php/Testing_for_Client_Side_URL_Redirect_(OTG-CLIENT-004)</a></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/understanding-and-discovering-open-redirect-vulnerabilities/">Understanding and Discovering Open Redirect Vulnerabilities</a></li>
+<li><a target="_blank" rel="noopener" href="https://portswigger.net/support/using-burp-to-test-for-open-redirections">Using Burp to Test for Open Redirections</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/945990">[2020] - Safe Redirect Bypass in Twitter</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/840736">[2020] - Open Redirect filter bypass through ‘&#39; character via URL parameter</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/781673">[2020] - Accepting error message on twitter sends you to attacker site</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/562417">[2019] - Open Redirection in [https://www.hackerone.com/index.php]</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/692154">[2019] - Open Redirect in the Path of vendhq.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/330008">[2019] - [dev.twitter.com] XSS and Open Redirect Protection Bypass</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/311330">[2018] - Open Redirect in SEMrush</a></li>
+<li><a target="_blank" rel="noopener" href="https://pranavhivarekar.in/2014/09/19/hackerone-bug-redirect-filter-bypass-and-open-redirector/">[2014] - HackerOne Bug - Redirect Filter Bypass and Open Redirector</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/pentest/JSON-Web-Token-Flaw/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/04/pentest/JSON-Web-Token-Flaw/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-04 19:25:19" itemprop="dateCreated datePublished" datetime="2021-12-04T19:25:19+08:00">2021-12-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-23 23:30:03" itemprop="dateModified" datetime="2021-04-23T23:30:03+08:00">2021-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="JSON-Web-Token-Flaw"><a href="#JSON-Web-Token-Flaw" class="headerlink" title="JSON Web Token Flaw"></a>JSON Web Token Flaw</h1><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://r2c.dev/blog/2020/hardcoded-secrets-unverified-tokens-and-other-common-jwt-mistakes/">Hardcoded secrets, unverified tokens, and other common JWT mistakes</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.hackerone.com/zerodaily/2018-04-11">Hackerone - 2018-04-11 - JSON Web Token Security Cheat Sheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@maison.moa/using-jwt-json-web-tokens-to-authorize-users-and-protect-api-routes-3e04a1453c3e">Using JWT (JSON Web Tokens) to authorize users and protect API routes</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_Cheat_Sheet_for_Java.md">JSON Web Token Cheat Sheet for Java</a></li>
+</ul>
+<h2 id="Payloads"><a href="#Payloads" class="headerlink" title="Payloads"></a>Payloads</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/JSON%20Web%20Token">PayloadsAllTheThings - JSON Web Token</a></li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://hackerone.com/reports/748214">[2020] - [express-laravel-passport] Improper Authentication</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/101-writeups/hacking-json-web-token-jwt-233fe6c862e6">[2018] - Hacking JSON Web Token (JWT)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.moses-security.com/blog/exploiting-json-web-token-vulnerability">[2018] - Exploiting JSON Web Token Vulnerability</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackernoon.com/can-timing-attack-be-a-practical-security-threat-on-jwt-signature-ba3c8340dea9">[2017] - How to Hack a Weak JWT Implementation with a Timing Attack</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@valeriyshevchenko/brute-forcing-jwt-token-hs256-6f545d24c7c3">[2017] - Brute Forcing JWT Token (HS256)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.websecurify.com/2017/02/hacking-json-web-tokens.html">[2017] - Hackinh JSON Web Tokens - from Zero to Hero without Effort</a></li>
+<li><a target="_blank" rel="noopener" href="https://trustfoundry.net/jwt-hacking-101/">[2017] - JWT Hacking 101</a></li>
+<li><a target="_blank" rel="noopener" href="https://dev.to/antoinette0x53/forging-json-web-tokens-to-win-a-prize">[2017] - Forging JSON Web Tokens To Win a Prize</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.compass-security.com/2017/05/jwt-burp-extension/">[2017] - JWT Burp Extension</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/loige/processing-your-pdf-into-slides-cracking-jwt-tokens-a-tale-of-magic-nodejs-and-parallel-computing-code-europe-wroclaw-december-2017">[2017] - Cracking JWT Tokens</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sjoerdlangkemper.nl/2016/09/28/attacking-jwt-authentication/">[2016] - Attacking JWT Authentication</a></li>
+<li><a target="_blank" rel="noopener" href="https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/">[2015] - Critical vulnerabilities in JSON Web Token libraries</a></li>
+</ul>
 
       
     </div>
@@ -457,6 +1003,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -521,7 +1070,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
