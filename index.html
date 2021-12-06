@@ -161,7 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/05/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/12/05/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="post-title-link" itemprop="url">运算符重载-类型转换</a>
         </h2>
 
         <div class="post-meta">
@@ -170,10 +170,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-05 22:00:01 / 修改时间：21:59:49" itemprop="dateCreated datePublished" datetime="2021-12-05T22:00:01+08:00">2021-12-05</time>
+              <time title="创建时间：2021-12-05 22:00:01" itemprop="dateCreated datePublished" datetime="2021-12-05T22:00:01+08:00">2021-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-06 08:08:28" itemprop="dateModified" datetime="2021-12-06T08:08:28+08:00">2021-12-06</time>
+              </span>
 
           
 
@@ -186,7 +192,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="运算符重载-类型转换"><a href="#运算符重载-类型转换" class="headerlink" title="运算符重载-类型转换"></a>运算符重载-类型转换</h1><h3 id="什么是类型转换？"><a href="#什么是类型转换？" class="headerlink" title="什么是类型转换？"></a>什么是类型转换？</h3><p>字面上理解就是从一个类型转换到到另一个类型。</p>
+          <h3 id="什么是类型转换？"><a href="#什么是类型转换？" class="headerlink" title="什么是类型转换？"></a>什么是类型转换？</h3><p>字面上理解就是从一个类型转换到到另一个类型。</p>
 <h4 id="从内存的角度来看："><a href="#从内存的角度来看：" class="headerlink" title="从内存的角度来看："></a>从内存的角度来看：</h4><p>大家都知道任何一个数据类型在内存中都一定会占据一定空间，类型转换本质上讲只是我们看待这片内存的角度发生了改变，内存中的数据没有变的。</p>
 <h4 id="C-语言中转化规则"><a href="#C-语言中转化规则" class="headerlink" title="C 语言中转化规则"></a>C 语言中转化规则</h4><p>char：1字节；int：4字节；double：8字节</p>
 <p>自动的和强制的两种规则，从小的字节到大的是自动的，反之则是强制的。</p>
@@ -212,7 +218,7 @@
 </li>
 <li><p>有一个地方记着f函数要的是B类。</p>
 </li>
-<li><p>调用f函数时，在将 a传入f函数时，拿a去和记着的地方比对。发现不对。</p>
+<li><p>调用f函数时，在将 a传入f函数时，拿a去和记着的地方比对。发现不对,然后去寻找类型转化</p>
 </li>
 <li><p>发现class B有将a类型转成B类型的拷贝构造</p>
 </li>
@@ -263,7 +269,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/05/static/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/12/05/static/" class="post-title-link" itemprop="url">Static</a>
         </h2>
 
         <div class="post-meta">
@@ -272,10 +278,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-05 19:25:45 / 修改时间：19:25:23" itemprop="dateCreated datePublished" datetime="2021-12-05T19:25:45+08:00">2021-12-05</time>
+              <time title="创建时间：2021-12-05 19:25:45" itemprop="dateCreated datePublished" datetime="2021-12-05T19:25:45+08:00">2021-12-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-06 08:08:35" itemprop="dateModified" datetime="2021-12-06T08:08:35+08:00">2021-12-06</time>
+              </span>
 
           
 
@@ -288,7 +300,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h4 id="基本的点"><a href="#基本的点" class="headerlink" title="基本的点"></a>基本的点</h4><p>&ensp;&ensp;&ensp;&ensp;C++的static比C的内容多一点内容，静态成员和静态对象。不多的内容也没有变化。（例：函数内的静态变量其实是全局变量。）</p>
+          <h4 id="基本的点"><a href="#基本的点" class="headerlink" title="基本的点"></a>基本的点</h4><p>&ensp;&ensp;&ensp;&ensp;C++的static比C的内容多一点内容，静态成员和静态对象。不多的内容也没有变化。（例：函数内的静态变量其实是全局变量。）</p>
 <p>&ensp;&ensp;&ensp;&ensp;类中的静态成员依然遵循着public和private:的事情</p>
 <p>&ensp;&ensp;&ensp;&ensp;</p>
 <h4 id="静态变量："><a href="#静态变量：" class="headerlink" title="静态变量："></a>静态变量：</h4><p>.h里的静态变量只是声明，需要对应的.cpp来定义。（为何要强调的原因是，在学习inline时，概念正好相反。[inline是都要在.h,.cpp里没有东西])</p>
