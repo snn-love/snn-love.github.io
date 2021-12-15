@@ -155,7 +155,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/C++%E6%A8%A1%E6%9D%BF%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -254,7 +254,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/05/%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -362,7 +362,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/05/static/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -451,7 +451,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/about_%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -534,7 +534,7 @@
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/26/%E6%A1%A5%E6%A2%81%EF%BC%9A%EF%BC%89%20_This_%E6%8C%87%E9%92%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -618,83 +618,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
-      <meta itemprop="name" content="Poem_n">
-      <meta itemprop="description" content="网安征程">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poem_n的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/06/phpMyAdmin%E7%9A%84%E6%97%A5%E5%BF%97%E5%86%99%E5%85%A5shell/" class="post-title-link" itemprop="url">phpMyAdmin的日志写入shell</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-06 10:22:57 / 修改时间：10:47:20" itemprop="dateCreated datePublished" datetime="2021-10-06T10:22:57+08:00">2021-10-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>约束：权限为 root ，phpmyadmin管理页面泄露</p>
-<p>原理：全局函数的可控，导致日志属性（路径，内容）的可控。</p>
-<ul>
-<li><p>general log 指的是日志保存状态，一共有两个值（ON/OFF）ON代表开启 OFF代表关闭。</p>
-</li>
-<li><p>general log file 指的是日志的保存路径。</p>
-</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://localhost/phpMyAdmin/">set general_log =’on’;</a> 状态设置为打开。默认为关闭</p>
-<p>set global general_log_file=’E:/oldphpstday/WWW/shell.php’;</p>
-<p>将路径设置为网站目录，并命名为shell.php</p>
-<p>我们查询：</p>
-<p>SELECT ‘一句话木马’ ;</p>
-<p>POST中不用引号也可以</p>
-<p>之后在网站的个目录找到shell.php 就可以命令执行了 .</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/05/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="E:\pa.ke\love.jpg">
+      <meta itemprop="image" content="/images/love.jpg">
       <meta itemprop="name" content="Poem_n">
       <meta itemprop="description" content="网安征程">
     </span>
@@ -815,7 +742,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Poem_n"
-      src="E:\pa.ke\love.jpg">
+      src="/images/love.jpg">
   <p class="site-author-name" itemprop="name">Poem_n</p>
   <div class="site-description" itemprop="description">网安征程</div>
 </div>
@@ -824,7 +751,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
