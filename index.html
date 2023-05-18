@@ -471,10 +471,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-11-25 14:15:48 / 修改时间：14:31:52" itemprop="dateCreated datePublished" datetime="2021-11-25T14:15:48+08:00">2021-11-25</time>
+              <time title="创建时间：2021-11-25 14:15:48" itemprop="dateCreated datePublished" datetime="2021-11-25T14:15:48+08:00">2021-11-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-01 08:56:47" itemprop="dateModified" datetime="2022-03-01T08:56:47+08:00">2022-03-01</time>
+              </span>
 
           
 
@@ -512,6 +518,8 @@
 <p>当需要用一个对象去初始化一个对象时，会触发拷贝构造，如果自己没定义则编译器自动生成一个。</p>
 <h4 id="因此衍生出建议："><a href="#因此衍生出建议：" class="headerlink" title="因此衍生出建议："></a>因此衍生出建议：</h4><p>&ensp;&ensp;&ensp;&ensp;   当定义一个类时，固定流程  构造/析构函数—&gt;private保护属性—&gt;拷贝构造.</p>
 <p>&ensp;&ensp;&ensp;&ensp;</p>
+<p>####ELF知识合并：<br>.init和 .fini部分有特殊用途。如果一个函数放在.init部分，系统会在main函数之前执行它。此外，放在.fini部分中的函数将在main函数返回后由系统执行。编译器利用此功能在C++中实现全局构造函数和析构函数。</p>
+<p>当执行 ELF 可执行文件时，系统将加载所有共享对象文件，然后将控制权转移给可执行文件。使用正确构造的.init和 .fini部分，构造函数和析构函数将以正确的顺序调用。</p>
 
       
     </div>
@@ -562,7 +570,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-29 14:07:11" itemprop="dateModified" datetime="2021-11-29T14:07:11+08:00">2021-11-29</time>
+                <time title="修改时间：2023-05-18 15:00:51" itemprop="dateModified" datetime="2023-05-18T15:00:51+08:00">2023-05-18</time>
               </span>
 
           
@@ -576,7 +584,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;不是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。</p>
+          <h3 id="它是个啥？"><a href="#它是个啥？" class="headerlink" title="它是个啥？"></a>它是个啥？</h3><p>&ensp;&ensp;&ensp;&ensp;是个真实指针，当创建一个自定义类型的对象时（class a{….}；int main(){a A;}） A就是那个被’This’所指的对象。每当使用这个对象的成员函数，哪个函数的参数表就会多出一个隐藏的参数,就是哪个this指针。</p>
 <h3 id="它有什么用？"><a href="#它有什么用？" class="headerlink" title="它有什么用？"></a>它有什么用？</h3><p>&ensp;&ensp;&ensp;&ensp;先放代码</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span></span><br><span class="line"> <span class="keyword">int</span> i;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">A</span>(<span class="keyword">int</span> aa):<span class="built_in">i</span>(aa);</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">()</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">   cout&lt;&lt;<span class="string">&quot;i的值为：&quot;</span>&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">A <span class="title">a</span><span class="params">(<span class="number">20</span>)</span>,<span class="title">b</span><span class="params">(<span class="number">30</span>)</span></span>;</span><br><span class="line">a.out;       <span class="comment">//  输出 20       </span></span><br><span class="line">b.out;       <span class="comment">//  输出 30 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -852,7 +860,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
